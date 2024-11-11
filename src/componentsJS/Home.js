@@ -42,7 +42,7 @@ const Home = ({ visitedMenuPage = [] }) => {
             {subject.name}
           </button>
         ))}
-       <p class="survey">יש הערות על הממשק?
+       <p className="survey">יש הערות על הממשק?
 יש מחמאות? מלאו את השאלון וצרו איתנו קשר
 <a id="link" href="https://docs.google.com/forms/d/e/1FAIpQLSflGabIbTG0fNDp_MGmI64a9xzg4AHkJNyH7DovtxicCIuIhw/viewform" target="_blank">
       בקישור הבא
