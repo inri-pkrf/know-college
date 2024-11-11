@@ -10,9 +10,8 @@ function App() {
         <div className="App">
             <Header className="header-fixed" />
             <Routes>
-            <Route path="/" element={<Navigate to="/college" />} />
-                <Route path="/college" element={<Intro />} />
-                <Route path="/college/home" element={<Home className="home" />} />
+                <Route path="/" element={<Intro />} />
+                <Route path="/home" element={<Home className="home" />} />
             </Routes>
         </div>
     );
