@@ -34,7 +34,7 @@ const Intro = () => {
   };
 
   const goToHome = () => {
-    navigate('/college/home'); 
+    navigate('/home'); 
   };
 
   return (

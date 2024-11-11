@@ -4,6 +4,7 @@ import './App.css';
 import Home from './componentsJS/Home';
 import Intro from './componentsJS/Intro';
 import Header from './componentsJS/Header';
+import CollegeGeneral from './componentsJS/CollegeGeneral';
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Intro />} />
                 <Route path="/home" element={<Home className="home" />} />
+                <Route path="/college-info" element={<CollegeGeneral  />} />
             </Routes>
         </div>
     );
