@@ -1,14 +1,20 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import '../componentsCSS/Header.css';
-import Hamburger from '../componentsJS/Hamburger'
+import Hamburger from '../componentsJS/Hamburger';
+
 function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
 
+  // בודק אם המסלול הוא "/iron-swords-college" ומחלק את התמונה לפי זה
+  const imageSrc = location.pathname === '/iron-swords-college'
+    ? `${process.env.PUBLIC_URL}/assets/imgs/red.png`  // אדום
+    : `${process.env.PUBLIC_URL}/assets/imgs/orange.png`; // כתום
 
   return (
     <header className="header">
-     <Hamburger className="hamburger"/>
+      <Hamburger className="hamburger"/>
       
       <img
         src={`${process.env.PUBLIC_URL}/assets/imgs/collegeLogo.png`}
@@ -23,7 +29,7 @@ function Header() {
       </button>
 
       <img
-        src={`${process.env.PUBLIC_URL}/assets/imgs/orange.png`}
+        src={imageSrc}
         alt="Decorative"
         className="decorative-photo"
       />

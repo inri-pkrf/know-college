@@ -20,6 +20,8 @@
   
   /* מצבים לקווים כשהם פתוחים (מראים איקס) */
   .hamburger-line.open:nth-child(1) {
+    background-color: white;
+
     transform: rotate(45deg) translate(5px, 5px);
   }
   
@@ -28,6 +30,8 @@
   }
   
   .hamburger-line.open:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    background-color: white;
+
+    transform: rotate(-45deg) translate(11px, -7px);
   }
   
