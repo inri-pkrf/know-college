@@ -1,29 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../componentsCSS/Home.css';
 
-const Home = ({ visitedMenuPage = [] }) => {
+const Home = () => {
   const navigate = useNavigate();
+  const [visitedPages, setVisitedPages] = useState([]); // מכיל את כל ה-pathים של העמודים בהם ביקרת
+
   const subjects = [
     { name: 'מי זאת המכללה', path: '/college-info' },
     { name: 'המכללה בחרבות ברזל', path: '/iron-swords-college' },
     { name: 'נכסים דיגיטליים', path: '/digital-assets' },
     { name: 'הספרייה הלאומית לחירןם', path: '/emergency-library' },
-    { name: 'קש"ח', path: '/socaity' }
+    { name: 'קש"ח', path: '/society' }
   ];
 
-  // שליפת רשימת כפתורים שנלחצו מ-localStorage או השארת רשימה ריקה אם אין נתונים
-  const [clickedPages, setClickedPages] = useState(
-    JSON.parse(localStorage.getItem('clickedPages')) || []
-  );
+  useEffect(() => {
+    // בודק אם יש מערך של paths ב-localStorage ומעדכן את ה-state
+    const storedPages = localStorage.getItem('visitedPages');
+    if (storedPages) {
+      setVisitedPages(JSON.parse(storedPages)); // ממיר את המידע חזרה למערך
+    }
+  }, []);
 
   const moveToPage = (index) => {
-    if (!clickedPages.includes(index)) {
-      const updatedClickedPages = [...clickedPages, index];
-      setClickedPages(updatedClickedPages);
-      localStorage.setItem('clickedPages', JSON.stringify(updatedClickedPages)); // עדכון localStorage
+    const subject = subjects[index];
+    let updatedVisitedPages = [...visitedPages];
+
+    // אם עוד לא ביקרנו בעמוד הזה, נוסיף אותו
+    if (!updatedVisitedPages.includes(subject.path)) {
+      updatedVisitedPages.push(subject.path);
+      // שומר את המערך המעודכן ב-localStorage
+      localStorage.setItem('visitedPages', JSON.stringify(updatedVisitedPages));
     }
-    navigate(subjects[index].path);
+
+    // עדכון ה-state
+    setVisitedPages(updatedVisitedPages);
+
+    // נווט לעמוד הרצוי
+    navigate(subject.path);
   };
 
   return (
@@ -40,10 +54,7 @@ const Home = ({ visitedMenuPage = [] }) => {
           <button
             key={index}
             onClick={() => moveToPage(index)}
-            className={`btn-class ${
-              clickedPages.includes(index) ? 'clicked-btn' : ''
-            } ${visitedMenuPage?.includes(index) ? 'disabled-btn' : ''}`}
-            disabled={visitedMenuPage?.includes(index)}
+            className={`btn-class ${visitedPages.includes(subject.path) ? 'active' : ''}`} // מוסיף את ה-class "active" אם ביקרנו בעמוד הזה
           >
             {subject.name}
           </button>
@@ -60,7 +71,6 @@ const Home = ({ visitedMenuPage = [] }) => {
           </a>
         </p>
       </div>
-      <h1 className="margin-class">thgrthrthrthrthtrhrth</h1>
     </div>
   );
 };

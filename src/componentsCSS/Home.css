@@ -28,37 +28,37 @@
     direction: rtl;
   }
   
-  .btn-class {
+/* סגנון ברירת המחדל של הכפתור */
+.btn-class {
     font-size: 1.5em;
     margin-top: 2vh;
     width: 80vw;
     height: auto;
     text-align: center;
     padding: 3vh 0;
-    background-color: rgb(23, 90, 133);
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
+    background-color: rgb(23, 90, 133); /* צבע הרקע המקורי */
+    color: white; /* צבע הטקסט */
+    border: none; /* אין גבול */
+    cursor: pointer; /* הקורסור יהפוך ליד */
+    border-radius: 50px; /* פינות מעוגלות */
     margin-bottom: 2vh;
-    font-family: "Heebo";
+    font-family: "Heebo"; /* גופן */
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* אנימציה רכה כשיש שינוי */
   }
   
-  .active-btn {
-    font-size: 1.5em;
-    margin-top: 2vh;
-    width: 60vw;
-    height: auto;
-    text-align: center;
-    padding: 1.5vh 0;
-    background-color: rgb(97, 97, 99);
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 15px;
-    opacity: 0.6;
-    font-family: "Heebo";
+  /* סגנון הכפתור במצב "נלחץ" */
+  button.active {
+    background-color: gray;  /* צבע רקע אפור כשהכפתור נלחץ */
+    color: #fff;  /* צבע טקסט לבן */
+    opacity: 0.7;  /* שקיפות קלה */
+    cursor: pointer;  /* הקורסור נשאר כידוע ללחיצה */
   }
+  
+  /* סגנון הכפתור בריחוף (hover) */
+  .btn-class:hover {
+    background-color: #45a049; /* שינוי צבע ברקע בעת ריחוף */
+  }
+  
   
   #main-title {
     position: absolute;
@@ -92,13 +92,7 @@
 
     margin-top: 20%;
   }
-  
-  .disabled-btn {
-    background-color: grey;
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-  
+
   .margin-class {
     position: absolute;
     color: transparent;
@@ -124,7 +118,4 @@
     color: rgb(23, 90, 133);
     text-decoration: underline;
   }
-  .clicked-btn {
-    background-color: gray; /* הצבע האפור לכפתור שנלחץ */
-    color: white;
-  }
+/* צבע אפור לכפתורים שנלחצו */
