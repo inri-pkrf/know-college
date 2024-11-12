@@ -38,27 +38,25 @@
     padding: 3vh 0;
     background-color: rgb(23, 90, 133); /* צבע הרקע המקורי */
     color: white; /* צבע הטקסט */
-    border: none; /* אין גבול */
-    cursor: pointer; /* הקורסור יהפוך ליד */
-    border-radius: 50px; /* פינות מעוגלות */
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
     margin-bottom: 2vh;
-    font-family: "Heebo"; /* גופן */
-    transition: background-color 0.3s ease, opacity 0.3s ease; /* אנימציה רכה כשיש שינוי */
-  }
-  
-  /* סגנון הכפתור במצב "נלחץ" */
-  button.active {
-    background-color: gray;  /* צבע רקע אפור כשהכפתור נלחץ */
-    color: #fff;  /* צבע טקסט לבן */
-    opacity: 0.7;  /* שקיפות קלה */
-    cursor: pointer;  /* הקורסור נשאר כידוע ללחיצה */
-  }
-  
-  /* סגנון הכפתור בריחוף (hover) */
-  .btn-class:hover {
-    background-color: #45a049; /* שינוי צבע ברקע בעת ריחוף */
-  }
-  
+    font-family: "Heebo";
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* סגנון הכפתור במצב "נלחץ" */
+.btn-class.active {
+    background-color: gray; /* צבע רקע אפור כשהכפתור נלחץ */
+    color: #fff;
+    opacity: 0.7;
+}
+
+/* סגנון הכפתור בריחוף */
+.btn-class:hover {
+    background-color: #45a049;
+}
   
   #main-title {
     position: absolute;

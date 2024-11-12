@@ -15,28 +15,33 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    // בודק אם יש מערך של paths ב-localStorage ומעדכן את ה-state
-    const storedPages = localStorage.getItem('visitedPages');
-    if (storedPages) {
-      setVisitedPages(JSON.parse(storedPages)); // ממיר את המידע חזרה למערך
+    // בודק אם מדובר בביקור ראשון בעמוד ומנקה את visitedPages אם כן
+    if (!localStorage.getItem('initialized')) {
+      localStorage.removeItem('visitedPages');
+      localStorage.setItem('initialized', 'true');
+      setVisitedPages([]);
+    } else {
+      const storedPages = localStorage.getItem('visitedPages');
+      if (storedPages) {
+        setVisitedPages(JSON.parse(storedPages));
+      }
     }
   }, []);
+
+  useEffect(() => {
+    console.log('Visited Pages:', visitedPages); // מדפיס את visitedPages בכל פעם שהוא מתעדכן
+  }, [visitedPages]);
 
   const moveToPage = (index) => {
     const subject = subjects[index];
     let updatedVisitedPages = [...visitedPages];
 
-    // אם עוד לא ביקרנו בעמוד הזה, נוסיף אותו
     if (!updatedVisitedPages.includes(subject.path)) {
       updatedVisitedPages.push(subject.path);
-      // שומר את המערך המעודכן ב-localStorage
       localStorage.setItem('visitedPages', JSON.stringify(updatedVisitedPages));
     }
 
-    // עדכון ה-state
     setVisitedPages(updatedVisitedPages);
-
-    // נווט לעמוד הרצוי
     navigate(subject.path);
   };
 
@@ -54,7 +59,7 @@ const Home = () => {
           <button
             key={index}
             onClick={() => moveToPage(index)}
-            className={`btn-class ${visitedPages.includes(subject.path) ? 'active' : ''}`} // מוסיף את ה-class "active" אם ביקרנו בעמוד הזה
+            className={`btn-class ${visitedPages.includes(subject.path) ? 'active' : ''}`}
           >
             {subject.name}
           </button>
