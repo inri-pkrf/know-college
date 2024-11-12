@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/know-college/static/css/main.1cbeca8b.css",
-    "main.js": "/know-college/static/js/main.a6ba958a.js",
+    "main.css": "/know-college/static/css/main.3727f654.css",
+    "main.js": "/know-college/static/js/main.033b92d3.js",
     "static/js/453.22be342d.chunk.js": "/know-college/static/js/453.22be342d.chunk.js",
     "static/media/Bg1.png": "/know-college/static/media/Bg1.ac9f9c75b406e10ae608.png",
     "index.html": "/know-college/index.html",
-    "main.1cbeca8b.css.map": "/know-college/static/css/main.1cbeca8b.css.map",
-    "main.a6ba958a.js.map": "/know-college/static/js/main.a6ba958a.js.map",
+    "main.3727f654.css.map": "/know-college/static/css/main.3727f654.css.map",
+    "main.033b92d3.js.map": "/know-college/static/js/main.033b92d3.js.map",
     "453.22be342d.chunk.js.map": "/know-college/static/js/453.22be342d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1cbeca8b.css",
-    "static/js/main.a6ba958a.js"
+    "static/css/main.3727f654.css",
+    "static/js/main.033b92d3.js"
   ]
 }
