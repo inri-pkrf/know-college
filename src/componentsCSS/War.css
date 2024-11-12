@@ -27,13 +27,14 @@
 
 .titles-red {
     font-size: 3.5em;
-    margin-bottom: 2vh;
+    margin-bottom: 6vh;
     direction: rtl;
     text-align: right;
     font-family: "karantina";
     color: #e06666;
-    padding-left: 5vw; /* Adds padding to the left */
-    padding-right: 5vw; /* Adds padding to the right */
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin-top: 13vh;
 }
 
 .red-text {

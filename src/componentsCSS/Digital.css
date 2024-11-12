@@ -157,10 +157,9 @@
     #next-btn {
       position: absolute;
       z-index: 5;
-      left: 40%; /* Adjusted to center horizontally */
+      left: 40%; 
       height: 8vh;
       width: auto;
-      animation: moveUpDown 2s infinite;
     }
 
     #link-digital{

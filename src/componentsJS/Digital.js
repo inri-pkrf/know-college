@@ -7,7 +7,7 @@ const Digital = () => {
 
   // פונקציה שתופעל בלחיצה על החץ
   const handleNextClick = () => {
-    navigate('/gifPage'); // מבצע ניווט לכתובת הרצויה
+    navigate('/gif-page'); // מבצע ניווט לכתובת הרצויה
   };
 
   return (

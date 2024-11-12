@@ -124,4 +124,7 @@
     color: rgb(23, 90, 133);
     text-decoration: underline;
   }
-  
+  .clicked-btn {
+    background-color: gray; /* הצבע האפור לכפתור שנלחץ */
+    color: white;
+  }
