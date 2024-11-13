@@ -19,7 +19,7 @@ const Hamburger = ({ onClick, visitedPages = [] }) => { // אתחול ברירת
   };
 
   // בודק אם כל העמודים בוקרו, חוץ מהעמוד של הבוחן
-  const allPagesVisited = ['/home', '/college-info', '/iron-swords-college', '/digital-assets', '/emergency-library', '/society']
+  const allPagesVisited = [ '/college-info', '/iron-swords-college', '/digital-assets', '/emergency-library', '/society']
     .every(path => visitedPages.includes(path)); // מסנן את העמוד של הבוחן
 
   return (

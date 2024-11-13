@@ -88,15 +88,17 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  
   const handleAnswerSelect = (answer) => {
     const newAnswers = [...selectedAnswers];
     newAnswers[currentIndex] = answer;
     setSelectedAnswers(newAnswers);
-
+  
     if (answer === correctAnswers[currentIndex]) {
-      setScore(prevScore => prevScore + 10);
+      setScore(prevScore => Math.min(prevScore + 10, 100)); // להבטיח שהציון לא יעלה על 100
     }
   };
+  
 
   const nextQuestion = () => {
     if (currentIndex < questions.length - 1) {

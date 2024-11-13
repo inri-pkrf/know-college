@@ -100,18 +100,12 @@
 }
 
 .results {
+  text-align: center;
+  font-size: 1.2em;
   position: absolute;
-  top: 15%;
-  right: 50%;
-  transform: translateX(50%);
-  height: 100vh;
-  width: 100vw;
-  background-color: white;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 0%;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  top:20vh;
+  right:50%;
+  transform:translateX(50%);
   direction: rtl;
 }
 
@@ -160,7 +154,7 @@
 
 .message{
   font-family: "Heebo";
-  font-size: 1.5em;
+  font-size: 1.2em;
 
 }
 
@@ -170,7 +164,7 @@
   border: none;
   border-radius: 50px;
   padding: 10px 20px;
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-family: "Heebo";
   margin-top: 2vh;
   width: 76vw;
@@ -185,7 +179,7 @@
   border: none;
   border-radius: 50px;
   padding: 10px 20px;
-  font-size: 1.3em;
+  font-size: 1.2em;
   margin-top: 5vh;
   font-family: "Heebo";
 }

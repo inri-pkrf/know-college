@@ -10,7 +10,7 @@ const Home = () => {
     { name: 'מי זאת המכללה', path: '/college-info' },
     { name: 'המכללה בחרבות ברזל', path: '/iron-swords-college' },
     { name: 'נכסים דיגיטליים', path: '/digital-assets' },
-    { name: 'הספרייה הלאומית לחירןם', path: '/emergency-library' },
+    { name: 'הספרייה הלאומית לחירום', path: '/emergency-library' },
     { name: 'קש"ח', path: '/society' },
     { name: 'בוחן', path: '/final' }
   ];
