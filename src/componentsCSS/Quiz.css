@@ -1,15 +1,76 @@
 #quiz {
-    position: absolute;
-    top: 27%;
-    right: 50%;
-    transform: translateX(50%);
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 0%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-  
+  position: absolute;
+  top: 27%;
+  right: 50%;
+  transform: translateX(50%);
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+.question-number {
+  font-size: 1.1em;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.question {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  transition: width 0.3s;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.answer-button {
+  padding: 10px;
+  font-size: 1em;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.answer-button.selected {
+  background-color: #4caf50;
+  color: white;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.results {
+  text-align: center;
+  font-size: 1.2em;
+}

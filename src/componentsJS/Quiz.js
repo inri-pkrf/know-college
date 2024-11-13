@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../componentsCSS/Quiz.css';
 
-// מערכים שהספקת:
+// שאלות ותשובות כפי שהיו במבנה המקורי
 const questions = [
   "מה אפשר לעשות באתר המכללה?",
   "כמה פרטי מידע יש בספרייה הלאומית לחירום?",
@@ -16,27 +16,51 @@ const questions = [
 ];
 const answers1 = [
   "א. להירשם להכשרות",
-  "ב. ללמוד על פעילויות המכללה",
-  "ג. לחפש תוכן מקצועי",
-  "ד. כל התשובות נכונות"
+  "א. כ-1,000 פריטים",
+  "א. מעגל שאם מסתובבים בו מספיק פעמים, גשם מתחיל לרדת",
+  "א. יום אחד",
+  "א. רשת חירום לישראל",
+  "א. 6",
+  "א. ארבעה",
+  "א. ביצוע 'זמן יקר' במפקדות",
+  "א. 465",
+  "א. הכי מוכנה בארץ"
 ];
 const answers2 = [
-  "א. כ-1,000 פריטים",
+  "ב. ללמוד על פעילויות המכללה",
   "ב. כ-1,250",
-  "ג. כ-1,500",
-  "ד. מעל 1,700"
+  "ב. מעגל ההכשרות שעוברות על מנהלי המכלולים שמגיעים למכללה",
+  "ב. 11 שעות",
+  "ב. רשת חברים לאומית",
+  "ב. 7",
+  "ב. חמישה",
+  "ב. הפצת שיעור דיגיטלי של הצח\"י",
+  "ב. 564",
+  "ב. איתנים ונהנים"
 ];
 const answers3 = [
-  "א. מעגל שאם מסתובבים בו מספיק פעמים, גשם מתחיל לרדת",
-  "ב. מעגל ההכשרות שעוברות על מנהלי המכלולים שמגיעים למכללה",
+  "ג. לחפש תוכן מקצועי",
+  "ג. כ-1,500",
   "ג. המעגל שעובר דרך התורה, ההכשרה ואימון במכללה והיכולת ללמוד מהשטח ולהשתפר תו\"כ תנועה",
-  "ד. כל מגמה בנפרד על מעגל הכשרה אחד, כשכל אחד משפיע רק בתחומו"
+  "ג. שני ימי הכשרה",
+  "ג. רשות החירום הלאומית",
+  "ג. 9",
+  "ג. שישה",
+  "ג. התנדבה בקטיף זיתים",
+  "ג. 456",
+  "ג. הכי מוכנים לחירום"
 ];
 const answers4 = [
-  "א. יום אחד",
-  "ב. 11 שעות",
-  "ג. שני ימי הכשרה",
-  "ד. חצי יום בלחץ"
+  "ד. כל התשובות נכונות",
+  "ד. מעל 1,700",
+  "ד. כל מגמה בנפרד על מעגל הכשרה אחד, כשכל אחד משפיע רק בתחומו",
+  "ד. חצי יום בלחץ",
+  "ד. רשות החירום לישראל",
+  "ד. 11",
+  "ד. הם היו אמריקאים, לא מספרד",
+  "ד. אירחה את שר התיירות, שר המדע ואת כל נציגי וועדת חוץ וביטחון",
+  "ד. 546",
+  "ד. הכי מוכנים במדינה"
 ];
 const correctAnswers = [
   "ד. כל התשובות נכונות",
@@ -46,11 +70,12 @@ const correctAnswers = [
   "ג. רשות החירום הלאומית",
   "ד. 11",
   "ג. שישה",
-  "ה. כל התשובות נכונות",
+  "ה.כל התשובות נכונות",
   "ג. 456",
   "ד. הכי מוכנים במדינה"
 ];
 
+// Quiz component
 const Quiz = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
@@ -63,7 +88,7 @@ const Quiz = () => {
     setSelectedAnswers(newAnswers);
 
     if (answer === correctAnswers[currentIndex]) {
-      setScore(prevScore => prevScore + 10);  // מוסיף 10 נקודות על תשובה נכונה
+      setScore(prevScore => prevScore + 10);
     }
   };
 
@@ -90,21 +115,28 @@ const Quiz = () => {
     setIsSubmitted(false);
   };
 
-  // מערכים של תשובות
-  const answerArrays = [answers1, answers2, answers3, answers4];
+  // מערך התשובות לכל שאלה
+  const answerOptions = [answers1[currentIndex], answers2[currentIndex], answers3[currentIndex], answers4[currentIndex]];
+  const progressWidth = `${((currentIndex + 1) / questions.length) * 100}%`;
 
   return (
     <div className="quiz-container">
       {!isSubmitted ? (
         <div id="quiz">
+          <p className="question-number">שאלה {currentIndex + 1} מתוך {questions.length}</p>
+
+          <div className="progress-bar-container">
+            <div className="progress-bar" style={{ width: progressWidth }}></div>
+          </div>
+
           <p className="question">{questions[currentIndex]}</p>
+
           <div className="answers">
-            {answerArrays[currentIndex].map((answer, index) => (
+            {answerOptions.map((answer, index) => (
               <button
                 key={index}
                 onClick={() => handleAnswerSelect(answer)}
                 className={`answer-button ${selectedAnswers[currentIndex] === answer ? 'selected' : ''}`}
-                disabled={isSubmitted}
               >
                 {answer}
               </button>
