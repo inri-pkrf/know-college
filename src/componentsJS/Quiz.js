@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../componentsCSS/Quiz.css';
+import html2canvas from 'html2canvas'; // ייבוא של הספרייה
 
 // שאלות ותשובות כפי שהיו במבנה המקורי
 const questions = [
@@ -46,7 +47,7 @@ const answers3 = [
   "ג. רשות החירום הלאומית",
   "ג. 9",
   "ג. שישה",
-  "ג. התנדבה בקטיף זיתים",
+  "ג. אירחה את שר התיירות, שר המדע ואת כל נציגי וועדת חוץ וביטחון",
   "ג. 456",
   "ג. הכי מוכנים לחירום"
 ];
@@ -58,7 +59,7 @@ const answers4 = [
   "ד. רשות החירום לישראל",
   "ד. 11",
   "ד. הם היו אמריקאים, לא מספרד",
-  "ד. אירחה את שר התיירות, שר המדע ואת כל נציגי וועדת חוץ וביטחון",
+  "ד. כל התשובות נכונות",
   "ד. 546",
   "ד. הכי מוכנים במדינה"
 ];
@@ -70,7 +71,7 @@ const correctAnswers = [
   "ג. רשות החירום הלאומית",
   "ד. 11",
   "ג. שישה",
-  "ה.כל התשובות נכונות",
+  "ד. כל התשובות נכונות",
   "ג. 456",
   "ד. הכי מוכנים במדינה"
 ];
@@ -114,6 +115,43 @@ const Quiz = () => {
     setSelectedAnswers([]);
     setIsSubmitted(false);
   };
+  const captureAndShareScreenshot = () => {
+    const element = document.querySelector('.results');
+  
+    // השתמש ב-html2canvas כדי לצלם את האלמנט וליצור תמונה
+    html2canvas(element).then((canvas) => {
+      const dataUrl = canvas.toDataURL('image/png'); // ייצור תמונה בפורמט PNG
+  
+      // יצירת אובייקט Blob שמייצג את התמונה
+      const byteString = atob(dataUrl.split(',')[1]);
+      const arrayBuffer = new ArrayBuffer(byteString.length);
+      const uintArray = new Uint8Array(arrayBuffer);
+  
+      for (let i = 0; i < byteString.length; i++) {
+        uintArray[i] = byteString.charCodeAt(i);
+      }
+  
+      const blob = new Blob([uintArray], { type: 'image/png' });
+  
+      // יצירת לינק להורדה של התמונה
+      const file = new File([blob], "screenshot.png", { type: 'image/png' });
+  
+      // אם הדפדפן תומך בשיתוף, נבצע את השיתוף
+      if (navigator.share) {
+        navigator.share({
+          title: 'תוצאת הבוחן',
+          text: 'הנה תוצאת הבוחן שלי!',
+          files: [file]
+        })
+        .then(() => console.log('הצלחה בשיתוף'))
+        .catch((error) => console.log('שיתוף נכשל:', error));
+      } else {
+        alert('הדפדפן שלך לא תומך בשיתוף');
+      }
+    });
+  };
+  
+  
 
   // מערך התשובות לכל שאלה
   const answerOptions = [answers1[currentIndex], answers2[currentIndex], answers3[currentIndex], answers4[currentIndex]];
@@ -144,32 +182,39 @@ const Quiz = () => {
           </div>
 
           <div className="navigation-buttons">
-            <button onClick={prevQuestion} disabled={currentIndex === 0}>שאלה קודמת</button>
             <button
+              className={` ${currentIndex === 0 ? 'button-disabled ' : 'prev-button'}`}
+              onClick={prevQuestion}
+              disabled={currentIndex === 0}
+            >
+              שאלה קודמת
+            </button>
+            <button
+              className={` ${selectedAnswers[currentIndex] === undefined || currentIndex === questions.length - 1 ? 'button-disabled ' : 'next-button'}`}
               onClick={nextQuestion}
-              disabled={selectedAnswers[currentIndex] === undefined}
+              disabled={selectedAnswers[currentIndex] === undefined || currentIndex === questions.length - 1}
             >
               שאלה הבאה
             </button>
           </div>
 
           {currentIndex === questions.length - 1 && (
-            <button onClick={finishQuiz}>סיים את המשחק</button>
+            <button className='end-btn' onClick={finishQuiz}>סיים את המשחק</button>
           )}
         </div>
       ) : (
         <div className="results">
-          <p>ציון: {score}</p>
+          <p className='score'>ציון: {score}</p>
           {score >= 70 ? (
             <div>
-              <p>מזל טוב! סיימת את הבוחן בהצלחה!</p>
-              <button>שתף צילום מסך</button>
-              <button onClick={retryQuiz}>נסו שוב</button>
+              <p className='message'>מזל טוב! סיימת את הבוחן בהצלחה!</p>
+              <button className='share-btn' onClick={captureAndShareScreenshot}>שתף תוצאה עם צילום מסך</button>
+              <button className='try-button' onClick={retryQuiz}>נסו שוב</button>
             </div>
           ) : (
             <div>
-              <p>ננסה שוב!</p>
-              <button onClick={retryQuiz}>נסו שוב</button>
+              <p className='message'>אוי, לא נורא</p>
+              <button className='end-btn' onClick={retryQuiz}>נסו שוב</button>
             </div>
           )}
         </div>
