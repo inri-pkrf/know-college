@@ -7,7 +7,7 @@
     width: 30px;
     top: 3%;
     left: 5%;
-    height: 30px;
+    height: 44px;
     z-index: 1001; /* להבטיח שהאייקון נמצא מעל התפריט */
     cursor: pointer;
 }
@@ -33,7 +33,7 @@
 
 .hamburger-line.open:nth-child(3) {
     background-color: white;
-    transform: rotate(-45deg) translate(11px, -7px);
+    transform: rotate(-45deg) translate(11px, -9px);
 }
 .menu {
     position: fixed;
@@ -140,3 +140,19 @@
   #linkMenu{
     color: white;
   }
+
+  /* כפתור "בוחן" שלא מאופשר */
+.fade {
+    opacity: 0.5; /* שקיפות נמוכה */
+  }
+  
+  /* לא לאפשר לחיצה על כפתור "בוחן" */
+  li.fade {
+    pointer-events: none; /* לא יאפשר אינטרקציה עם הכפתור */
+  }
+  
+  /* כשלא פעיל, הסמן יראה כלא זמין */
+  li[style*="not-allowed"] {
+    cursor: not-allowed;
+  }
+  

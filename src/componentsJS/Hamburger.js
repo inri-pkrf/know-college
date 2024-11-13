@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../componentsCSS/Hamburger.css';
 
-const Hamburger = ({ onClick }) => {
+const Hamburger = ({ onClick, visitedPages = [] }) => { // אתחול ברירת מחדל למערך ריק
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -17,6 +17,10 @@ const Hamburger = ({ onClick }) => {
     setIsOpen(false); // סגור את התפריט לאחר בחירה
     navigate(path);
   };
+
+  // בודק אם כל העמודים בוקרו, חוץ מהעמוד של הבוחן
+  const allPagesVisited = ['/home', '/college-info', '/iron-swords-college', '/digital-assets', '/emergency-library', '/society']
+    .every(path => visitedPages.includes(path)); // מסנן את העמוד של הבוחן
 
   return (
     <div>
@@ -44,7 +48,15 @@ const Hamburger = ({ onClick }) => {
           <div className="lineMenu"></div>
           <li onClick={() => handleMenuClick('/emergency-library')}>הספרייה הלאומית לחירום</li>
           <div className="lineMenu"></div>
-          <li onClick={() => handleMenuClick('/socaity')}>קש"ח</li>
+          <li onClick={() => handleMenuClick('/society')}>קש"ח</li>
+          <div className="lineMenu"></div>
+          <li 
+            onClick={() => handleMenuClick('/final')} 
+            className={!allPagesVisited ? 'fade' : ''} // מוסיף fade אם לא ביקרו בכל העמודים
+            style={{ cursor: !allPagesVisited ? 'not-allowed' : 'pointer' }} // משנה את הסמן
+          >
+            בוחן
+          </li>
           <div className="lineMenu"></div>
         </ul>
         <div className="mashov-menu">

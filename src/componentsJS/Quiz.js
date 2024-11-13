@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../componentsCSS/Quiz.css';
-import html2canvas from 'html2canvas'; // ייבוא של הספרייה
+import { useLocation } from 'react-router-dom'; 
+
+import html2canvas from 'html2canvas'; 
 
 // שאלות ותשובות כפי שהיו במבנה המקורי
 const questions = [
@@ -78,6 +80,9 @@ const correctAnswers = [
 
 // Quiz component
 const Quiz = () => {
+  const location = useLocation(); // קבלת המידע מהניווט
+  const { firstName, lastName } = location.state || {}; // קבלת השם והשם משפחה
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [score, setScore] = useState(0);
@@ -115,14 +120,13 @@ const Quiz = () => {
     setSelectedAnswers([]);
     setIsSubmitted(false);
   };
+
   const captureAndShareScreenshot = () => {
     const element = document.querySelector('.results');
   
-    // השתמש ב-html2canvas כדי לצלם את האלמנט וליצור תמונה
     html2canvas(element).then((canvas) => {
-      const dataUrl = canvas.toDataURL('image/png'); // ייצור תמונה בפורמט PNG
-  
-      // יצירת אובייקט Blob שמייצג את התמונה
+      const dataUrl = canvas.toDataURL('image/png'); 
+
       const byteString = atob(dataUrl.split(',')[1]);
       const arrayBuffer = new ArrayBuffer(byteString.length);
       const uintArray = new Uint8Array(arrayBuffer);
@@ -132,11 +136,8 @@ const Quiz = () => {
       }
   
       const blob = new Blob([uintArray], { type: 'image/png' });
-  
-      // יצירת לינק להורדה של התמונה
       const file = new File([blob], "screenshot.png", { type: 'image/png' });
   
-      // אם הדפדפן תומך בשיתוף, נבצע את השיתוף
       if (navigator.share) {
         navigator.share({
           title: 'תוצאת הבוחן',
@@ -150,10 +151,7 @@ const Quiz = () => {
       }
     });
   };
-  
-  
 
-  // מערך התשובות לכל שאלה
   const answerOptions = [answers1[currentIndex], answers2[currentIndex], answers3[currentIndex], answers4[currentIndex]];
   const progressWidth = `${((currentIndex + 1) / questions.length) * 100}%`;
 
@@ -205,10 +203,11 @@ const Quiz = () => {
       ) : (
         <div className="results">
           <p className='score'>ציון: {score}</p>
+          <p className="user-name">שם: {firstName} {lastName}</p> {/* הצגת השם ושם המשפחה */}
           {score >= 70 ? (
             <div>
-              <p className='message'>מזל טוב! סיימת את הבוחן בהצלחה!</p>
-              <button className='share-btn' onClick={captureAndShareScreenshot}>שתף תוצאה עם צילום מסך</button>
+              <p className='message'>מזל טוב!<br></br> סיימת את הבוחן בהצלחה!</p>
+              <button className='share-btn' onClick={captureAndShareScreenshot}>שתפו תוצאה עם צילום מסך</button>
               <button className='try-button' onClick={retryQuiz}>נסו שוב</button>
             </div>
           ) : (

@@ -55,7 +55,8 @@
 
 /* סגנון הכפתור בריחוף */
 .btn-class:hover {
-    background-color: #45a049;
+    background-color: rgb(33, 173, 216);
+    color: white;
 }
   
   #main-title {
@@ -66,6 +67,7 @@
     transform: translateX(50%);
     right: 50%;
     width: 100%;
+    font-weight: 500;
     text-align: center;
     font-family: "Karantina";
   }
@@ -117,3 +119,13 @@
     text-decoration: underline;
   }
 /* צבע אפור לכפתורים שנלחצו */
+/* כפתור "בוחן" שלא מאופשר */
+.fade {
+  opacity: 0.5; /* שקיפות נמוכה */
+  cursor: not-allowed; /* משנה את המצב של הסמן כשלא ניתן ללחוץ */
+}
+
+/* לא לאפשר לחיצה על כפתור "בוחן" */
+button:disabled {
+  pointer-events: none; /* לא יאפשר אינטרקציה עם הכפתור */
+}

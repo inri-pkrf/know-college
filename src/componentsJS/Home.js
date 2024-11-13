@@ -11,26 +11,23 @@ const Home = () => {
     { name: 'המכללה בחרבות ברזל', path: '/iron-swords-college' },
     { name: 'נכסים דיגיטליים', path: '/digital-assets' },
     { name: 'הספרייה הלאומית לחירןם', path: '/emergency-library' },
-    { name: 'קש"ח', path: '/society' }
+    { name: 'קש"ח', path: '/society' },
+    { name: 'בוחן', path: '/final' }
   ];
 
   useEffect(() => {
     // בודק אם מדובר בביקור ראשון בעמוד ומנקה את visitedPages אם כן
-    if (!localStorage.getItem('initialized')) {
-      localStorage.removeItem('visitedPages');
-      localStorage.setItem('initialized', 'true');
+    if (!sessionStorage.getItem('initialized')) {
+      sessionStorage.removeItem('visitedPages');
+      sessionStorage.setItem('initialized', 'true');
       setVisitedPages([]);
     } else {
-      const storedPages = localStorage.getItem('visitedPages');
+      const storedPages = sessionStorage.getItem('visitedPages');
       if (storedPages) {
         setVisitedPages(JSON.parse(storedPages));
       }
     }
   }, []);
-
-  useEffect(() => {
-    console.log('Visited Pages:', visitedPages); // מדפיס את visitedPages בכל פעם שהוא מתעדכן
-  }, [visitedPages]);
 
   const moveToPage = (index) => {
     const subject = subjects[index];
@@ -38,12 +35,17 @@ const Home = () => {
 
     if (!updatedVisitedPages.includes(subject.path)) {
       updatedVisitedPages.push(subject.path);
-      localStorage.setItem('visitedPages', JSON.stringify(updatedVisitedPages));
+      sessionStorage.setItem('visitedPages', JSON.stringify(updatedVisitedPages));
     }
 
     setVisitedPages(updatedVisitedPages);
     navigate(subject.path);
   };
+
+  // בודק אם כל העמודים בוקרו, חוץ מהעמוד של הבוחן
+  const allPagesVisited = subjects
+    .filter(subject => subject.path !== '/final') // מסנן את העמוד של הבוחן
+    .every(subject => visitedPages.includes(subject.path));
 
   return (
     <div id="page">
@@ -59,7 +61,8 @@ const Home = () => {
           <button
             key={index}
             onClick={() => moveToPage(index)}
-            className={`btn-class ${visitedPages.includes(subject.path) ? 'active' : ''}`}
+            className={`btn-class ${visitedPages.includes(subject.path) ? 'active' : ''} ${subject.path === '/final' && !allPagesVisited ? 'fade' : ''}`} // אם לא ביקרו בעמודים, נוסיף fade
+            disabled={subject.path === '/final' && !allPagesVisited} // מאופשר רק אם כל העמודים בוקרו
           >
             {subject.name}
           </button>
