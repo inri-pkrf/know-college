@@ -34,7 +34,7 @@ const Library = ({ onVisit }) => {
     <p className="simple-text-lib" >.בהתאם לצורך, ניתן לחפש קבצים בספרייה, לצפות, להוריד או לשתף
     צפו בסרטון הממש מגניב שלנו שמסביר בקצרה על הספרייה
     </p>
-    <video id="video-lib" src={`${process.env.PUBLIC_URL}/assets/media/librery.mp4`} controls ></video>
+    <video id="video-lib" src={`${process.env.PUBLIC_URL}/assets/media/library.mp4`} controls ></video>
     <p className="blue-text-center" >כדאי לשמור את הקישור
     </p>
     <p className="simple-text-lib" id="text-center" >תמצאו בספרייה הרבה חומרים מקצועיים שבטוח תצטרכו בשגרה ובחירום. 

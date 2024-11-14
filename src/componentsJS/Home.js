@@ -7,7 +7,6 @@ const Home = ({ onVisit }) => {
   const location = useLocation();
   const [visitedPages, setVisitedPages] = useState(() => {
     const storedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || [];
-    console.log("Loaded visitedPages from sessionStorage:", storedPages); // לוג לאיתור שגיאות
     return storedPages;
   });
 
@@ -22,7 +21,6 @@ const Home = ({ onVisit }) => {
 
   useEffect(() => {
     if (!visitedPages.includes(location.pathname)) {
-      console.log("Adding page to visitedPages:", location.pathname); // לוג לבדיקת נתיב הנוכחי
       const updatedVisitedPages = [...visitedPages, location.pathname];
       setVisitedPages(updatedVisitedPages);
       sessionStorage.setItem('visitedPages', JSON.stringify(updatedVisitedPages));
