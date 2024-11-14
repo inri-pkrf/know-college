@@ -7,7 +7,6 @@ const Hamburger = () => {
   const location = useLocation();
   const [visitedPages, setVisitedPages] = useState(() => {
     const storedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || [];
-    console.log("Loaded visitedPages from sessionStorage:", storedPages); // Log for debugging
     return storedPages;
   });
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +23,6 @@ const Hamburger = () => {
 
   useEffect(() => {
     if (!visitedPages.includes(location.pathname)) {
-      console.log("Adding page to visitedPages:", location.pathname); // Log for debugging
       const updatedVisitedPages = [...visitedPages, location.pathname];
       setVisitedPages(updatedVisitedPages);
       sessionStorage.setItem('visitedPages', JSON.stringify(updatedVisitedPages));

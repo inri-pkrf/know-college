@@ -13,7 +13,6 @@ function FinalScreen() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`שם פרטי: ${firstName}, שם משפחה: ${lastName}`);
     handleStartQuiz();
   };
 
