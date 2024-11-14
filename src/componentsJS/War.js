@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // הוספת ייבוא של useNavigate
 import '../componentsCSS/War.css';
 
-const War = () => {
+const War = ({ onVisit }) => {
   const navigate = useNavigate(); // יצירת פונקציה לניהול הניווט
+
+  useEffect(() => {
+    if (onVisit) {
+      onVisit(); // קריאה לפונקציית העדכון כאשר הקומפוננטה נטענת
+    }
+  }, [onVisit]);
 
   const handleNextClick = () => {
     navigate('/digital-assets'); // מבצע ניווט לכתובת הרצויה

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // הוספת ייבוא של useNavigate
 import '../componentsCSS/CollegeGeneral.css';
 
-const CollegeGeneral = () => {
+const CollegeGeneral = ({ onVisit }) => {
   const navigate = useNavigate(); // יצירת פונקציה לניהול הניווט
 
+  useEffect(() => {
+    if (onVisit) {
+      onVisit(); // קריאה לפונקציית העדכון כאשר הקומפוננטה נטענת
+    }
+  }, [onVisit]);
   // פונקציה שתופעל בלחיצה על החץ
   const handleNextClick = () => {
     navigate('/iron-swords-college'); // מבצע ניווט לכתובת הרצויה

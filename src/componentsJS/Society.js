@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../componentsCSS/Society.css';
 
-const Society = () => {
+const Society = ({ onVisit }) => {
   const navigate = useNavigate(); 
+
+  useEffect(() => {
+    if (onVisit) {
+      onVisit(); // קריאה לפונקציית העדכון כאשר הקומפוננטה נטענת
+    }
+  }, [onVisit]);
 
   const handleNextClick = () => {
     navigate('/final'); 

@@ -1,26 +1,48 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import '../componentsCSS/Hamburger.css';
 
-const Hamburger = ({ onClick, visitedPages = [] }) => { // אתחול ברירת מחדל למערך ריק
-  const [isOpen, setIsOpen] = useState(false);
+const Hamburger = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [visitedPages, setVisitedPages] = useState(() => {
+    const storedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || [];
+    console.log("Loaded visitedPages from sessionStorage:", storedPages); // Log for debugging
+    return storedPages;
+  });
+  const [isOpen, setIsOpen] = useState(false);
+
+  const subjects = [
+    { name: 'עמוד הבית', path: '/home' },
+    { name: 'מי זאת המכללה', path: '/college-info' },
+    { name: 'המכללה בחרבות ברזל', path: '/iron-swords-college' },
+    { name: 'נכסים דיגיטליים', path: '/digital-assets' },
+    { name: 'הספרייה הלאומית לחירום', path: '/emergency-library' },
+    { name: 'קש"ח', path: '/society' },
+    { name: 'בוחן', path: '/final' }
+  ];
+
+  useEffect(() => {
+    if (!visitedPages.includes(location.pathname)) {
+      console.log("Adding page to visitedPages:", location.pathname); // Log for debugging
+      const updatedVisitedPages = [...visitedPages, location.pathname];
+      setVisitedPages(updatedVisitedPages);
+      sessionStorage.setItem('visitedPages', JSON.stringify(updatedVisitedPages));
+    }
+  }, [location.pathname, visitedPages]);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
-    if (onClick) {
-      onClick();
-    }
   };
 
   const handleMenuClick = (path) => {
-    setIsOpen(false); // סגור את התפריט לאחר בחירה
+    setIsOpen(false); // Close the menu after selection
     navigate(path);
   };
 
-  // בודק אם כל העמודים בוקרו, חוץ מהעמוד של הבוחן
-  const allPagesVisited = [ '/college-info', '/iron-swords-college', '/digital-assets', '/emergency-library', '/society']
-    .every(path => visitedPages.includes(path)); // מסנן את העמוד של הבוחן
+  const allPagesVisited = subjects
+    .filter(subject => subject.path !== '/final')
+    .every(subject => visitedPages.includes(subject.path));
 
   return (
     <div>
@@ -29,7 +51,7 @@ const Hamburger = ({ onClick, visitedPages = [] }) => { // אתחול ברירת
         <div className={`hamburger-line ${isOpen ? 'open' : ''}`} />
         <div className={`hamburger-line ${isOpen ? 'open' : ''}`} />
       </div>
-      
+
       <div className={`menu ${isOpen ? 'open' : ''}`}>
         <img
           src={`${process.env.PUBLIC_URL}/assets/imgs/whiteLogo.svg`}
@@ -38,26 +60,19 @@ const Hamburger = ({ onClick, visitedPages = [] }) => { // אתחול ברירת
         />
         <h1 className="menu-title">הכרת המכללה</h1>
         <ul className="menu-list">
-          <li onClick={() => handleMenuClick('/home')}>עמוד הבית</li>
-          <div className="lineMenu"></div>
-          <li onClick={() => handleMenuClick('/college-info')}>מי זאת המכללה</li>
-          <div className="lineMenu"></div>
-          <li onClick={() => handleMenuClick('/iron-swords-college')}>המכללה בחרבות ברזל</li>
-          <div className="lineMenu"></div>
-          <li onClick={() => handleMenuClick('/digital-assets')}>נכסים דיגיטליים</li>
-          <div className="lineMenu"></div>
-          <li onClick={() => handleMenuClick('/emergency-library')}>הספרייה הלאומית לחירום</li>
-          <div className="lineMenu"></div>
-          <li onClick={() => handleMenuClick('/society')}>קש"ח</li>
-          <div className="lineMenu"></div>
-          <li 
-            onClick={() => handleMenuClick('/final')} 
-            className={!allPagesVisited ? 'fade' : ''} // מוסיף fade אם לא ביקרו בכל העמודים
-            style={{ cursor: !allPagesVisited ? 'not-allowed' : 'pointer' }} // משנה את הסמן
-          >
-            בוחן
-          </li>
-          <div className="lineMenu"></div>
+          {subjects.map((subject, index) => (
+            <React.Fragment key={index}>
+              <li
+                onClick={() => handleMenuClick(subject.path)}
+                className={`menu-item ${visitedPages.includes(subject.path) ? 'active' : ''} 
+                  ${subject.path === '/final' && !allPagesVisited ? 'fade' : ''}`}
+                style={{ cursor: subject.path === '/final' && !allPagesVisited ? 'not-allowed' : 'pointer' }}
+              >
+                {subject.name}
+              </li>
+              {index < subjects.length - 1 && <div className="lineMenu"></div>}
+            </React.Fragment>
+          ))}
         </ul>
         <div className="mashov-menu">
           <div className="mashovTextMenu">

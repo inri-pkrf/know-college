@@ -5,7 +5,7 @@
     right: 50%;
     transform: translateX(50%);
     height: 100vh;
-    width: 80vw;
+    width: 100vw;
     background-color: white;
     background-size: cover;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@
     font-family: "Heebo";
     color:rgb(28, 180, 227);
     font-weight: 900;
-    max-width: 90vw;
+    max-width: 100vw;
     padding-left: 5vw; 
     padding-right: 5vw; 
     }
@@ -66,3 +66,20 @@
             margin-top: 15vh;
 
         }
+        .input-label {
+            display: block;
+            margin-bottom: 10px; /* רווח בין ה-label ל-input */
+          }
+          
+          .input-field {
+            border-radius: 50px;
+            height: 5vh;
+            width: 60%; /* ניתן לקבוע רוחב מותאם */
+            margin: 0 auto; /* ממורכז */
+            display: block; /* כדי שה-input יהיה בשורה חדשה תחת ה-label */
+            padding: 0 10px; /* ריפוד פנימי */
+            text-align: center;
+            font-family: "Heebo";
+            font-size: 1.2em;
+          }
+          

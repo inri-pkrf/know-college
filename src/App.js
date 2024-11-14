@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'; // השתמש ב-HashRouter
+import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
 import Home from './componentsJS/Home';
 import Intro from './componentsJS/Intro';
@@ -15,7 +15,9 @@ import Quiz from './componentsJS/Quiz';
 
 function App() {
   const navigate = useNavigate();
-  const [visitedPages, setVisitedPages] = useState([]); // מעקב אחרי העמודים שביקרנו בהם
+  const [visitedPages, setVisitedPages] = useState(
+    JSON.parse(sessionStorage.getItem('visitedPages')) || []
+  );
 
   const allPages = [
     "/home", 
@@ -27,18 +29,16 @@ function App() {
     "/society"
   ];
 
-  // הפונקציה שתתעדכן אחרי כל ביקור בעמוד
   const handlePageVisit = (page) => {
     if (!visitedPages.includes(page)) {
       const updatedPages = [...visitedPages, page];
       setVisitedPages(updatedPages);
-      // שמירה ב-sessionStorage על הביקורים
       sessionStorage.setItem('visitedPages', JSON.stringify(updatedPages));
+      console.log("Visited Pages:", updatedPages);
     }
   };
 
   useEffect(() => {
-    // אם כל העמודים בוקרו, נעבור ל-final
     if (allPages.every(p => visitedPages.includes(p))) {
       navigate("/final");
     }
@@ -49,7 +49,7 @@ function App() {
       <Header className="header-fixed" />
       <Routes>
         <Route path="/" element={<Intro />} />
-        <Route path="/home" element={<Home onVisit={() => handlePageVisit("/home")} />} />
+        <Route path="/home" element={<Home onVisit={handlePageVisit} />} />
         <Route path="/college-info" element={<CollegeGeneral onVisit={() => handlePageVisit("/college-info")} />} />
         <Route path="/iron-swords-college" element={<War onVisit={() => handlePageVisit("/iron-swords-college")} />} />
         <Route path="/digital-assets" element={<Digital onVisit={() => handlePageVisit("/digital-assets")} />} />

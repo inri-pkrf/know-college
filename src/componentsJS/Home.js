@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import '../componentsCSS/Home.css';
 
-const Home = () => {
+const Home = ({ onVisit }) => {
   const navigate = useNavigate();
-  const [visitedPages, setVisitedPages] = useState([]); // מכיל את כל ה-pathים של העמודים בהם ביקרת
+  const location = useLocation();
+  const [visitedPages, setVisitedPages] = useState(() => {
+    const storedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || [];
+    console.log("Loaded visitedPages from sessionStorage:", storedPages); // לוג לאיתור שגיאות
+    return storedPages;
+  });
 
   const subjects = [
     { name: 'מי זאת המכללה', path: '/college-info' },
@@ -16,35 +21,21 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    // בודק אם מדובר בביקור ראשון בעמוד ומנקה את visitedPages אם כן
-    if (!sessionStorage.getItem('initialized')) {
-      sessionStorage.removeItem('visitedPages');
-      sessionStorage.setItem('initialized', 'true');
-      setVisitedPages([]);
-    } else {
-      const storedPages = sessionStorage.getItem('visitedPages');
-      if (storedPages) {
-        setVisitedPages(JSON.parse(storedPages));
-      }
+    if (!visitedPages.includes(location.pathname)) {
+      console.log("Adding page to visitedPages:", location.pathname); // לוג לבדיקת נתיב הנוכחי
+      const updatedVisitedPages = [...visitedPages, location.pathname];
+      setVisitedPages(updatedVisitedPages);
+      sessionStorage.setItem('visitedPages', JSON.stringify(updatedVisitedPages));
+      onVisit(location.pathname); // נרשם רק אם הדף לא נבקר קודם
     }
-  }, []);
+  }, [location.pathname, visitedPages, onVisit]); // השגחה על כל ערך רלוונטי
 
   const moveToPage = (index) => {
-    const subject = subjects[index];
-    let updatedVisitedPages = [...visitedPages];
-
-    if (!updatedVisitedPages.includes(subject.path)) {
-      updatedVisitedPages.push(subject.path);
-      sessionStorage.setItem('visitedPages', JSON.stringify(updatedVisitedPages));
-    }
-
-    setVisitedPages(updatedVisitedPages);
-    navigate(subject.path);
+    navigate(subjects[index].path);
   };
 
-  // בודק אם כל העמודים בוקרו, חוץ מהעמוד של הבוחן
   const allPagesVisited = subjects
-    .filter(subject => subject.path !== '/final') // מסנן את העמוד של הבוחן
+    .filter(subject => subject.path !== '/final')
     .every(subject => visitedPages.includes(subject.path));
 
   return (
@@ -61,8 +52,8 @@ const Home = () => {
           <button
             key={index}
             onClick={() => moveToPage(index)}
-            className={`btn-class ${visitedPages.includes(subject.path) ? 'active' : ''} ${subject.path === '/final' && !allPagesVisited ? 'fade' : ''}`} // אם לא ביקרו בעמודים, נוסיף fade
-            disabled={subject.path === '/final' && !allPagesVisited} // מאופשר רק אם כל העמודים בוקרו
+            className={`btn-class ${visitedPages.includes(subject.path) ? 'active' : ''} ${subject.path === '/final' && !allPagesVisited ? 'fade' : ''}`}
+            disabled={subject.path === '/final' && !allPagesVisited}
           >
             {subject.name}
           </button>
