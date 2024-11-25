@@ -79,7 +79,7 @@ const correctAnswers = [
 ];
 
 // Quiz component
-const Quiz = () => {
+const Quiz = ({ onReset }) => {
   const location = useLocation(); // קבלת המידע מהניווט
   const { firstName, lastName } = location.state || {}; // קבלת השם והשם משפחה
 
@@ -211,6 +211,8 @@ const Quiz = () => {
               <p className='message'>מזל טוב!<br></br> סיימת את הבוחן בהצלחה!</p>
               <button className='share-btn' onClick={captureAndShareScreenshot}>שתפו תוצאה עם צילום מסך</button>
               <button className='try-button' onClick={retryQuiz}>נסו שוב</button>
+              <button  onClick={onReset} className="reset-btn">
+להתחלת הלומדה מחדש      </button>
             </div>
           ) : (
             <div>

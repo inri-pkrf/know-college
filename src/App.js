@@ -38,6 +38,13 @@ function App() {
     }
   };
 
+
+  const resetProgress = () => {
+    sessionStorage.removeItem('visitedPages'); // איפוס ה-sessionStorage
+    setVisitedPages([]); // איפוס הסטייט
+    navigate("/"); // חזרה לעמוד הפתיחה
+  };
+  
   useEffect(() => {
     if (allPages.every(p => visitedPages.includes(p))) {
       navigate("/final");
@@ -57,8 +64,8 @@ function App() {
         <Route path="/emergency-library" element={<Library onVisit={() => handlePageVisit("/emergency-library")} />} />
         <Route path="/society" element={<Society onVisit={() => handlePageVisit("/society")} />} />
         <Route path="/final" element={<FinalScreen />} />
-        <Route path="/test" element={<Quiz />} />
-      </Routes>
+        <Route path="/test" element={<Quiz onReset={resetProgress} />} />
+        </Routes>
     </div>
   );
 }

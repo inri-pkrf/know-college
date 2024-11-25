@@ -100,13 +100,13 @@
 }
 
 .results {
-  text-align: center;
-  font-size: 1.2em;
-  position: absolute;
-  top:20vh;
-  right:50%;
-  transform:translateX(50%);
-  direction: rtl;
+    text-align: center;
+    font-size: 1.2em;
+    position: absolute;
+    top: 11vh;
+    right: 50%;
+    transform: translateX(50%);
+    direction: rtl;
 }
 
 .prev-button{
@@ -153,39 +153,69 @@
 }
 
 .message{
-  font-family: "Heebo";
-  font-size: 1.2em;
+    font-family: "Heebo";
+    font-size: 1.2em;
+    right: 50%;
+    width: 90vw;
+    transform: translateX(50%);
+    position: absolute;
 
 }
 
 .share-btn{
-  background-color: rgb(33, 173, 216);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  font-family: "Heebo";
-  margin-top: 2vh;
-  width: 76vw;
-  margin-bottom: auto;
+    background-color: rgb(33, 173, 216);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    position: absolute;
+    font-family: "Heebo";
+    margin-top: 15vh;
+    right: 50%;
+    width: 76vw;
+    transform: translateX(50%);
+    margin-bottom: auto;
 
 }
 
 
 .try-button{
+    background-color: rgb(255, 140, 0);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    margin-top: 33vh;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    width: 40vw;
+    font-family: "Heebo";
+}
+.reset-btn{
   background-color: rgb(255, 140, 0);
   color: white;
   border: none;
   border-radius: 50px;
   padding: 10px 20px;
   font-size: 1.2em;
-  margin-top: 5vh;
+  margin-top: 45vh;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  width: 70vw;
   font-family: "Heebo";
 }
 
 .user-name
 {
-  font-family: "Heebo";
-  font-size: 1.5em;
+    font-family: "Heebo";
+    margin-top: -5vh;
+    position: absolute;
+    right: 50%;
+    width: 90vw;
+    transform: translateX(50%);
+    font-size: 1.5em;
 }
