@@ -32,7 +32,7 @@ function FinalScreen() {
             id="first-name"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
-            placeholder="הכנס שם פרטי"
+            placeholder="הכניסו שם פרטי"
             className="input-field"
             required
           />
@@ -45,7 +45,7 @@ function FinalScreen() {
             id="last-name"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
-            placeholder="הכנס שם משפחה"
+            placeholder="הכניסו שם משפחה"
             className="input-field"
             required
           />
