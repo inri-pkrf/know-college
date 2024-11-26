@@ -26,7 +26,7 @@
   
   #welcome-text{
     color: white;
-    font-family: "karantina";
+    font-family: "karantina" ,Arial;
     font-size: 3em;
     transform: translateX(50%);
     right: 50%;
@@ -49,7 +49,7 @@
   }
   
   #sub-title{
-    font-family: 'Karantina';
+    font-family: 'Karantina' ,Arial;
     font-size:4em;;
     color: white;
     margin-bottom: -5vw;

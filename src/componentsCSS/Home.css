@@ -24,7 +24,7 @@
     right: 50%;
     transform: translateX(50%);
     z-index: 10000;
-    font-family: "Heebo";
+    font-family: "Heebo" ,Arial;
     direction: rtl;
   }
   
@@ -42,7 +42,7 @@
     cursor: pointer;
     border-radius: 50px;
     margin-bottom: 2vh;
-    font-family: "Heebo";
+    font-family: "Heebo" ,Arial;
     transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
@@ -69,7 +69,7 @@
     width: 100%;
     font-weight: 500;
     text-align: center;
-    font-family: "Karantina";
+    font-family: "Karantina" ,Arial;
   }
   
   #intro, #intro1 {
@@ -78,7 +78,7 @@
     left: 50%;
     top: 30vh;
     transform: translateX(-50%);
-    font-family: "Heebo";
+    font-family: "Heebo" ,Arial;
     font-size: 1.2em;
     direction: rtl;
     font-weight: 700;
@@ -87,7 +87,7 @@
   }
   
   #intro {
-    font-family: "Heebo";
+    font-family: "Heebo" ,Arial;
     font-weight: 900;
 
     margin-top: 20%;
@@ -109,7 +109,7 @@
     margin-top: 94vmax;
     right: 50%;
     transform: translateX(50%);
-    font-family: 'Heebo';
+    font-family: 'Heebo' ,Arial;
     font-size: 1.3em;
     color: rgb(23, 90, 133);
   }

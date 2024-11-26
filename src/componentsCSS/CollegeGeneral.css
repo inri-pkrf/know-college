@@ -16,7 +16,7 @@
   .titles-gray {
     font-size: 3.2em;
     color: rgb(89, 89, 89);
-    font-family: "Karantina";
+    font-family: "Karantina" , Arial;
     margin-top: 16vh;
     text-align: right; /* Aligns this title to the right */
     max-width: 90vw; /* Prevents text from stretching across the full width */
@@ -25,7 +25,7 @@
   }
   
   .simple-text, .blue-text, .grey-bold {
-    font-family: "Heebo";
+    font-family: 'Heebo', Arial;
     text-align: right; /* Aligns these texts to the right */
     max-width: 90vw; /* Prevents text from stretching across the full width */
     padding-left: 5vw; /* Adds padding to the left */

@@ -49,7 +49,7 @@
             height: 8vh;
             position: absolute;
             font-size: 1.3em;
-            font-family: "Heebo";
+            font-family: "Heebo" ,Arial;
             font-weight: bold;
             color: rgb(255, 255, 255);
             padding: 1.5vw;
@@ -79,7 +79,7 @@
             display: block; /* כדי שה-input יהיה בשורה חדשה תחת ה-label */
             padding: 0 10px; /* ריפוד פנימי */
             text-align: center;
-            font-family: "Heebo";
+            font-family: "Heebo" ,Arial;
             font-size: 1.2em;
           }
           
