@@ -1,51 +1,83 @@
+/* עיצוב ברירת מחדל (לטלפון) */
 .header {
-    position: fixed; 
-    top: 0;
-    width: 100%;
-    height: 11vh;
-    z-index: 10000;
-    background-color: white; 
-  }
-  
-  .App-logo {
-    height: 8vh;
-    width: auto;
-    position: fixed;
-    top: 2vh;
-    right: 5vw;
-  }
+  position: fixed; 
+  top: 0;
+  width: 100%;
+  height: 11vh;
+  z-index: 10000;
+  background-color: white; 
+}
+
+.App-logo {
+  height: 8vh;
+  width: auto;
+  position: fixed;
+  top: 2vh;
+  right: 5vw;
+}
 
 .back-homeNav{
   height: 8vh;
-  width:35vw;
+  width: 35vw;
   top: 2vh;
   right: 5vw;
   position: fixed;
   background-color: transparent;
   border: none;
+}
 
+.right-logo-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
 
+.decorative-photo {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 42vw; 
+  height: auto;
+  z-index: -1; 
+}
+
+.hamburger{
+  position: absolute;
+  top: 5%;
+  left: 5%;
 }
 
 
-  .right-logo-link {
-    position: fixed;
-    top: 10px;
-    left: 10px; /* Positioning the icon to the left */
-    cursor: pointer; /* Change cursor to pointer */
+/* --- למסכים גדולים יותר (מחשב) --- */
+@media screen and (min-width: 768px) {
+  .header {
+    height: 8vh;
   }
-  
+
+  .App-logo {
+    height: 9vh;
+    top: 1vh;
+    right: 2vw;
+  }
+  .back-homeNav:hover {
+    cursor: pointer;
+  }
+
+  .back-homeNav {
+    height: 9vh;
+    width: 15vw;
+    top: 1vh;
+    right: 2vw;
+  }
+
   .decorative-photo {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 42vw; 
-    height: auto;
-    z-index: -1; 
+    width: 18vw;  /* מצטמצם כדי שלא ייקח חצי מסך במחשב */
   }
-  
- .hamburger{
-    position: absolute;
-    top:5%;
-    left:5%;
- }
+
+  .hamburger {
+    top: 2%;
+    left: 2%;
+    transform: scale(4); /* קצת יותר גדול במחשב */
+  }
+}

@@ -1,89 +1,205 @@
-#college-general {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-    z-index: 2000; /* Ensure it appears above the header */
-    padding-top: 2vh;
-    overflow-y: scroll; 
-    overflow-x: hidden;
-    text-align: right; /* Aligns all text to the right */
-    direction: rtl;
-  }
-  
-  .titles-gray {
-    font-size: 3.2em;
-    color: rgb(89, 89, 89);
-    font-family: "Karantina" , Arial;
-    margin-top: 16vh;
-    text-align: right; /* Aligns this title to the right */
-    max-width: 90vw; /* Prevents text from stretching across the full width */
-    padding-left: 5vw; /* Adds padding to the left */
-    padding-right: 5vw; /* Adds padding to the right */
-  }
-  
-  .simple-text, .blue-text, .grey-bold {
-    font-family: 'Heebo', Arial;
-    text-align: right; /* Aligns these texts to the right */
-    max-width: 90vw; /* Prevents text from stretching across the full width */
-    padding-left: 5vw; /* Adds padding to the left */
-    padding-right: 5vw; /* Adds padding to the right */
-  }
-  
-  .simple-text {
-    font-size: 1em;
-    color: rgb(89, 89, 89);
-  }
-  
-  .blue-text {
-    font-size: 1.2em;
-    font-weight: 900;
-    color: rgb(28, 180, 227);
-  }
-  
-  .grey-bold {
-    font-size: 1.3em;
-    color: rgb(89, 89, 89);
-    font-weight: 900;
-  }
-  
-  #next-btn {
-    position: absolute;
-    z-index: 5;
-    left: 40%;
-    height: 8vh;
-  }
-  
-  .image-content, .gif-content {
-    width: 100%;
-    height: auto;
-  }
-  
-  #video {
-    width: 100vw;
-    height: auto;
-  }
-  
-  #important-text {
-    text-align: center;
-    font-size: 1em;
-    max-width: 90vw;
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-  
-  .footer{
-    position: absolute;
-    right: 50%;
-    height: 10vh;
-    transform: translateX(50%);
-    background-color: transparent;
-    font-weight: bold;
-    margin-top: 3vh;
-    margin-bottom: 22vh;
-    width: 90vw;
-    font-size: 1.1em;
+/* עיצוב ברירת מחדל - מובייל */
+.CollegeGeneral {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 2000;
+  padding-top: 2vh;
+  overflow-y: scroll; 
+  overflow-x: hidden;
+  text-align: right;
+  direction: rtl;
 }
 
+.CollegeGeneral .content-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.titles-gray {
+  font-size: 2em;
+  color: rgb(89, 89, 89);
+  font-family: "Karantina", Arial;
+  margin-top: 16vh;
+  text-align: right;
+  max-width: 90vw;
+  padding-left: 5vw;
+  padding-right: 5vw; 
+}
+
+.simple-text, .blue-text, .grey-bold {
+  font-family: 'Heebo', Arial;
+  text-align: right;
+  max-width: 90vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.simple-text {
+  font-size: 1em;
+  color: rgb(89, 89, 89);
+}
+
+.blue-text {
+  font-size: 1.2em;
+  font-weight: 900;
+  color: rgb(28, 180, 227);
+}
+
+.grey-bold {
+  font-size: 1.3em;
+  color: rgb(89, 89, 89);
+  font-weight: 900;
+}
+
+#next-btn {
+  position: absolute;
+  z-index: 5;
+  left: 40%;
+  height: 8vh;
+}
+
+.image-content, .gif-content, #video {
+  width: 100%;
+  height: auto;
+  margin: 2vh 0;
+}
+
+#important-text {
+  text-align: center;
+  font-size: 1em;
+  max-width: 90vw;
+  margin: 2vh auto;
+}
+
+.footer {
+  position: relative;
+    text-align: center;
+    height: auto;
+    background-color: transparent;
+    font-weight: bold;
+    margin: 5vh auto;
+    width: 90vw;
+    font-size: 1.1em;
+    margin-top: 17vh;
+}
+
+
+/* טאבלט */
+@media screen and (min-width: 768px) {
+  .CollegeGeneral {
+        position: relative;
+        left: 13%;
+        width: 70vw;
+ 
+  }
+
+  .titles-gray {
+    font-size: 9vmin;
+    margin-top: 10vh;
+    text-align: center;
+  }
+
+  .simple-text, .blue-text, .grey-bold {
+    font-size: 3vmin;
+    line-height: 1.5;
+    width: 60vw;
+    padding-right:5vw;
+    padding-left:5vw;
+  }
+  #important-text {
+  text-align: center;
+    font-size: 3vmin;
+        width: 60vw;
+         padding-right:5vw;
+    padding-left:5vw;
+
+  margin: 2vh auto;
+}
+
+
+  #video, .image-content, .gif-content {
+    width: 40vw;   /* לא מתוחים על כל המסך אלא לפי הקונטיינר */
+    height: auto;
+    display: block;
+    margin: 3vh auto;
+    right:50%;
+  }
+
+  .footer {
+    font-size: 1.3em;
+    width: 100%;
+    margin-bottom: 10vh;
+  }
+}
+
+
+/* דסקטופ */
+@media screen and (min-width: 1200px) {
+  .CollegeGeneral {
+        position: relative;
+        left: 13%;
+        width: 70vw;
+ 
+  }
+
+  .titles-gray {
+    font-size: 9vmin;
+    margin-top: 10vh;
+    text-align: center;
+  }
+
+  .simple-text, .blue-text, .grey-bold {
+    font-size: 3vmin;
+    line-height: 1.5;
+    width: 60vw;
+    padding-right:5vw;
+    padding-left:5vw;
+  }
+  #important-text {
+  text-align: center;
+    font-size: 3vmin;
+        width: 60vw;
+         padding-right:5vw;
+    padding-left:5vw;
+
+  margin: 2vh auto;
+}
+
+
+  #video, .image-content, .gif-content {
+    width: 40vw;   /* לא מתוחים על כל המסך אלא לפי הקונטיינר */
+    height: auto;
+    display: block;
+    margin: 3vh auto;
+    right:50%;
+  }
+
+    .CollegeGeneral .footer {
+    font-size: 1.3em;
+    width: 100%;
+    margin-bottom: 10vh;
+  }
+    .CollegeGeneral #next-btn {
+         position: absolute;
+        z-index: 5;
+        height: 8vh;
+        right: 46%;
+}
+    .CollegeGeneral #next-btn:hover {
+         cursor: pointer;
+}
+}
+.fade-in-collage {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-collage.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

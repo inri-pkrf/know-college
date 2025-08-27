@@ -1,29 +1,28 @@
-#war {
+.War{
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-    z-index: 2000; /* Ensure it appears above the header */
-    padding-top: 2vh;
-    overflow-y: scroll;
-    text-align: right; /* Aligns all text to the right */
-    direction: rtl;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 2000;
+  padding-top: 2vh;
+  overflow-y: scroll; 
+  overflow-x: hidden;
+  text-align: right;
+  direction: rtl;
 }
 
 .simple-text-war {
-    font-family: "Heebo";
-    text-align: right; /* Aligns these texts to the right */
-    max-width: 90vw; /* Prevents text from stretching across the full width */
-    padding-left: 5vw; /* Adds padding to the left */
-    padding-right: 5vw; /* Adds padding to the right */
-}
-
-.simple-text-war {
-    font-size: 1em;
+    font-family: "Assistant";
+    text-align: right; 
+    max-width: 90vw; 
+    padding-left: 5vw;
+    padding-right: 5vw;
+     font-size: 1em;
     color: rgb(89, 89, 89);
 }
+
 
 .titles-red {
     font-size: 3.5em;
@@ -42,7 +41,7 @@
     margin-bottom: 2vh;
     direction: rtl;
     text-align: right;
-    font-family: "Heebo";
+    font-family: "Assistant";
     font-weight: 900;
     padding-left: 5vw;
     padding-right: 5vw;
@@ -57,7 +56,7 @@
     padding-left: 5vw;
     padding-right: 5vw;
     text-align: right;
-    font-family: "Heebo";
+    font-family: "Assistant";
     font-weight: 900;
     color: #e06666;
 }
@@ -78,12 +77,175 @@
 .image-discription {
     text-align: center;
     background-color: rgb(214, 214, 214);
-    margin-top: 0.5em; /* Adds space between image and description */
-    padding: 0.5em; /* Adds padding to the description */
+    margin-top: 0.5em; 
+    padding: 0.5em; 
 }
 
 .image-content {
     display: block;
-    margin: 0 auto; /* Centers the image */
-    max-width: 90%; /* Keeps the image responsive */
+    margin: 0 auto; 
+    max-width: 90%; 
+}
+
+
+
+@media screen and (min-width: 768px) {
+ .War {
+        position: relative;
+        left: 13%;
+        width: 70vw;
+          overflow-y: scroll; 
+  overflow-x: hidden;
+ 
+  }
+   .titles-red {
+    font-size: 9vmin;
+    margin-bottom: 6vh;
+    direction: rtl;
+    text-align: center;
+    font-family: "karantina";
+    color: #e06666;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin-top: 13vh;
+}
+
+  .titles-gray {
+    font-size: 9vmin;
+    margin-top: 10vh;
+    text-align: center;
+  }
+
+  .simple-text-war, .red-text, .red-bold  {
+    font-size: 3vmin;
+    line-height: 1.5;
+    width: 60vw;
+    padding-right:5vw;
+    padding-left:5vw;
+  }
+  #important-text {
+  text-align: center;
+    font-size: 3vmin;
+        width: 60vw;
+         padding-right:5vw;
+    padding-left:5vw;
+
+  margin: 2vh auto;
+}
+.image-discription {
+           position: relative;
+        text-align: center;
+        background-color: rgb(214, 214, 214);
+        margin-top: 0.5em;
+        font-size: 2vmin;
+        width: 50vw;
+        right: 12%;
+}
+
+
+  #video, .image-content, .gif-content {
+    width: 40vw;   /* לא מתוחים על כל המסך אלא לפי הקונטיינר */
+    height: auto;
+    display: block;
+    margin: 3vh auto;
+    right:50%;
+  }
+
+  .footer {
+    font-size: 1.3em;
+    width: 100%;
+    margin-bottom: 10vh;
+  }
+
+  .War #next-btn {
+    position: absolute;
+    z-index: 5;
+    left: 45%;
+    height: 8vh;
+    width: auto;
+}
+  .War #next-btn:hover {
+    cursor: pointer;
+}
+
+
+}
+
+
+/* דסקטופ */
+@media screen and (min-width: 1200px) {
+ .War {
+        position: relative;
+        left: 13%;
+        width: 70vw;
+ 
+  }
+
+  .titles-gray {
+    font-size: 9vmin;
+    margin-top: 10vh;
+    text-align: center;
+  }
+
+  .simple-text-war, .red-text, .red-bold {
+    font-size: 3vmin;
+    line-height: 1.5;
+    width: 60vw;
+    padding-right:5vw;
+    padding-left:5vw;
+  }
+  #important-text {
+  text-align: center;
+    font-size: 3vmin;
+        width: 60vw;
+         padding-right:5vw;
+    padding-left:5vw;
+
+  margin: 2vh auto;
+}
+.image-discription {
+           position: relative;
+        text-align: center;
+        background-color: rgb(214, 214, 214);
+        margin-top: 0.5em;
+        font-size: 2vmin;
+        width: 50vw;
+        right: 12%;
+}
+
+
+  #video, .image-content, .gif-content {
+    width: 40vw;   /* לא מתוחים על כל המסך אלא לפי הקונטיינר */
+    height: auto;
+    display: block;
+    margin: 3vh auto;
+    right:50%;
+  }
+
+  .footer {
+    font-size: 1.3em;
+    width: 100%;
+    margin-bottom: 10vh;
+  }
+  .titles-red {
+    font-size: 9vmin;
+    margin-bottom: 6vh;
+    direction: rtl;
+    text-align: center;
+    font-family: "karantina";
+    color: #e06666;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin-top: 13vh;
+}
+}
+.fade-in-war {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-war.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
