@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../componentsCSS/Header.css';
-import Hamburger from '../componentsJS/Hamburger';
+import Hamburger from './Hamburger';
 
 function Header() {
   const navigate = useNavigate();
