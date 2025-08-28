@@ -37,7 +37,7 @@ const Home = ({ onVisit }) => {
     .every(subject => visitedPages.includes(subject.path));
 
   return (
-    <div id="page">
+    <div className="Home">
       <h1 id="main-title">עמוד הבית</h1>
       <div className="text">
         <p id="intro1">אנחנו ממליצים ללכת לפי הסדר, למרות שאפשר איך שרוצים.</p>

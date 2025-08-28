@@ -34,12 +34,12 @@
 }
 
 .decorative-photo {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  width: 42vw; 
-  height: auto;
-  z-index: -1; 
+ position: fixed;
+    top: 11vh;
+    left: 0;
+    width: 42vw;
+    height: auto;
+    z-index: -1;
 }
 
 .hamburger{
@@ -72,7 +72,7 @@
   }
 
   .decorative-photo {
-    width: 18vw;  /* מצטמצם כדי שלא ייקח חצי מסך במחשב */
+    width: 15vw;  /* מצטמצם כדי שלא ייקח חצי מסך במחשב */
   }
 
   .hamburger {

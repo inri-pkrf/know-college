@@ -96,8 +96,15 @@
         width: 70vw;
           overflow-y: scroll; 
   overflow-x: hidden;
- 
+     scrollbar-width: none;
+    -ms-overflow-style: none; 
   }
+ .War ::-webkit-scrollbar{
+     display: none; 
+ }
+
+
+
    .titles-red {
     font-size: 9vmin;
     margin-bottom: 6vh;
@@ -178,8 +185,15 @@
         position: relative;
         left: 13%;
         width: 70vw;
- 
+          overflow-y: scroll; 
+  overflow-x: hidden;
+     scrollbar-width: none;
+    -ms-overflow-style: none; 
   }
+ .War ::-webkit-scrollbar{
+     display: none; 
+ }
+
 
   .titles-gray {
     font-size: 9vmin;

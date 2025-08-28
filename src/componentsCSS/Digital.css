@@ -109,7 +109,7 @@
   margin: 17vh auto 5vh auto;
 }
 #link-digital {
-  background-color: rgb(28, 180, 227);
+    background: linear-gradient(135deg, #1ca3d8, #5dc1ff);
   border-radius: 50px;
   font-size: 1.5em;
   font-family: "Assistant", Arial;
@@ -125,7 +125,7 @@
   transition: all 0.3s ease; /* מוסיף אנימציה ל-hover */
 }
 #link-digital:hover {
-  background-color: rgb(20, 150, 200); /* שינוי צבע בעת hover */
+    background: linear-gradient(135deg, #1ca3d8, #107dc2);
   transform: translateX(50%) scale(1.05); /* מעט הגדלה */
   cursor: pointer;
 }
@@ -164,6 +164,11 @@
     position: relative;
     left: 13%;
     width: 70vw;
+     scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+  .Digital::-webkit-scrollbar {
+    display: none;
   }
 
   .titles-gray-digital {
@@ -259,8 +264,14 @@
 /* ====================== דסקטופ ====================== */
 @media screen and (min-width: 1200px) {
   .Digital {
+    position: relative;
     left: 13%;
     width: 70vw;
+     scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+  .Digital::-webkit-scrollbar {
+    display: none;
   }
 
   .titles-gray-digital {

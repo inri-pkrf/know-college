@@ -1,4 +1,4 @@
-#quiz {
+.Quiz {
   position: absolute;
   top: 15%;
   right: 50%;
@@ -26,7 +26,7 @@
   margin-top: 14vh;
   color: rgb(89, 89, 89);
   text-align: center;
-  font-family: "Heebo";
+  font-family: "Assistant";
 }
 
 
@@ -60,7 +60,7 @@
   padding: 10px;
   font-size: 1.2em;
   text-align: center;
-  font-family: "Heebo";
+  font-family: "Assistant";
   border: 1px solid #ddd;
   border-radius: 50px;
   width: 80vw;
@@ -94,7 +94,7 @@
   border-radius: 50px;
   padding: 10px 20px;
   font-size: 1.2em;
-  font-family: "Heebo";
+  font-family: "Assistant";
   opacity: 0.3;
 
 }
@@ -116,7 +116,7 @@
   border-radius: 50px;
   padding: 10px 20px;
   font-size: 1.2em;
-  font-family: "Heebo";
+  font-family: "Assistant";
   
 }
 
@@ -127,7 +127,7 @@
   border-radius: 50px;
   padding: 10px 20px;
   font-size: 1.2em;
-  font-family: "Heebo";
+  font-family: "Assistant";
 }
 
 .end-btn{
@@ -137,7 +137,7 @@
   border-radius: 50px;
   padding: 10px 20px;
   font-size: 1.2em;
-  font-family: "Heebo";
+  font-family: "Assistant";
   margin-top: 10vh;
   width: 60vw;
   margin-bottom:auto ;
@@ -153,7 +153,7 @@
 }
 
 .message{
-    font-family: "Heebo";
+    font-family: "Assistant";
     font-size: 1.2em;
     right: 50%;
     width: 90vw;
@@ -170,7 +170,7 @@
     padding: 10px 20px;
     font-size: 1.2em;
     position: absolute;
-    font-family: "Heebo";
+    font-family: "Assistant";
     margin-top: 15vh;
     right: 50%;
     width: 76vw;
@@ -192,7 +192,7 @@
     right: 50%;
     transform: translateX(50%);
     width: 40vw;
-    font-family: "Heebo" ,Arial;
+    font-family: "Assistant" ,Arial;
 }
 .reset-btn{
   background-color: rgb(255, 140, 0);
@@ -206,16 +206,290 @@
   right: 50%;
   transform: translateX(50%);
   width: 70vw;
-  font-family: "Heebo" ,Arial;
+  font-family: "Assistant" ,Arial;
 }
 
 .user-name
 {
-    font-family: "Heebo" ,Arial;
+    font-family: "Assistant" ,Arial;
     margin-top: -5vh;
     position: absolute;
     right: 50%;
     width: 90vw;
     transform: translateX(50%);
     font-size: 1.5em;
+}
+
+@media screen and (min-width: 768px) {
+  .Quiz {
+  position: absolute;
+  top: 5%;
+  right: 50%;
+  transform: translateX(50%);
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+.question-number {
+  font-size: 8vmin;
+  text-align: center;
+  font-family: "karantina";
+  color:rgb(89,89,89)
+}
+
+.question {
+        font-size: 3vmin;
+        margin-top: 14vh;
+        color: rgb(89, 89, 89);
+        text-align: center;
+        font-family: "Assistant";
+}
+
+
+.progress-bar-container {
+  width: 60%;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  margin-top: 10px;
+  position: fixed;
+  right:50%;
+  transform: translateX(50%);
+ 
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: rgb(28, 180, 227);;
+  border-radius: 10px;
+  transition: width 0.3s;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.answer-button {
+  padding: 10px;
+  font-size: 3vmin;
+  text-align: center;
+  font-family: "Assistant";
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  width: 50vw;
+  margin: 10px auto; /* מרכז את הכפתור */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.answer-button:hover {
+ background-color: #8a8a8a;
+}
+
+
+.answer-button.selected {
+  background-color: rgb(28, 180, 227);
+  color: white;
+}
+
+.navigation-buttons {
+  display: flex;
+  gap: -5vw;
+  width: 60%;
+  margin: 2vh auto 0 auto;
+  border-radius: 50px;
+  padding: 10px 20px;
+  border: none;
+    white-space: nowrap;
+}
+
+
+.button-disabled {
+
+  background-color: rgb(102, 102, 102);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 3vmin;
+  font-family: "Assistant";
+  opacity: 0.3;
+    width: 10vw;
+
+
+}
+
+.results {
+    text-align: center;
+    font-size: 1.2em;
+    position: absolute;
+    top: 11vh;
+    right: 50%;
+    transform: translateX(50%);
+    direction: rtl;
+}
+
+.prev-button{
+  background: linear-gradient(15deg, rgb(255, 140, 0), #ffc74f);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 3vmin;
+  font-family: "Assistant";
+    width: 10vw;
+      cursor: pointer;
+  
+}
+.prev-button:hover{
+  background: linear-gradient(15deg,  #ffc74f, rgb(255, 140, 0));
+ 
+}
+
+.next-button{
+    background: linear-gradient(135deg, #1ca3d8, #5dc1ff);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 3vmin;
+  font-family: "Assistant";
+  width: 10vw;
+  cursor: pointer;
+}
+.next-button:hover{
+    background: linear-gradient(135deg, #5dc1ff, #1ca3d8);
+ 
+}
+
+.end-btn{
+  background-color: rgb(33, 173, 216);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 3vmin;
+  font-family: "Assistant";
+  margin-top: 4vh;
+  width: 30vw;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+.try-btn{
+    background: linear-gradient(135deg, #1ca3d8, #5dc1ff);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 3vmin;
+  font-family: "Assistant";
+  margin-top: 9vh;
+  width: 30vw;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+.try-btn:hover{
+    background: linear-gradient(135deg, #5dc1ff, #1ca3d8);
+
+}
+.end-btn:hover{
+  background-color: rgb(27, 109, 134);
+
+}
+
+.score{
+  font-family: "Karantina";
+  font-size: 9vmin;
+  color:rgb(89,89,89);
+
+
+
+}
+
+.message{
+    font-family: "Assistant";
+    font-size:3vmin;
+    right: 50%;
+    width: 90vw;
+    transform: translateX(50%);
+    position: absolute;
+
+}
+
+.share-btn{
+        background-color: rgb(33, 173, 216);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+        font-size: 3vmin;
+        position: absolute;
+        font-family: "Assistant";
+        margin-top: 15vh;
+        right: 50%;
+        width: 26vw;
+        transform: translateX(50%);
+        margin-bottom: auto;
+
+}
+
+
+.try-button{
+  background: linear-gradient(15deg, rgb(255, 140, 0), #ffc74f);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 3vmin;
+    margin-top: 23vh;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    width: 26vw;
+    font-family: "Assistant" ,Arial;
+}
+.reset-btn{
+  background: linear-gradient(15deg, rgb(255, 140, 0), #ffc74f);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 3.5vmin;
+  margin-top: 40vh;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  width: 30vw;
+  font-family: "Assistant" ,Arial;
+  cursor: pointer;
+}
+.reset-btn:hover{
+  background: linear-gradient(15deg, #ffc74f, rgb(255, 140, 0));
+
+}
+
+.user-name
+{
+    font-family: "Assistant" ,Arial;
+    margin-top: -5vh;
+    position: absolute;
+    right: 50%;
+    width: 90vw;
+    transform: translateX(50%);
+    font-size:3vmin;
+}
+
+}
+@media screen and (min-width: 1200px) {
+
 }

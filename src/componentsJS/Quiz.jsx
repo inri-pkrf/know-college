@@ -160,7 +160,7 @@ const Quiz = ({ onReset }) => {
   return (
     <div className="quiz-container">
       {!isSubmitted ? (
-        <div id="quiz">
+        <div className="Quiz">
           <p className="question-number">שאלה {currentIndex + 1} מתוך {questions.length}</p>
 
           <div className="progress-bar-container">
@@ -217,7 +217,7 @@ const Quiz = ({ onReset }) => {
           ) : (
             <div>
               <p className='message'>אוי, לא נורא</p>
-              <button className='end-btn' onClick={retryQuiz}>נסו שוב</button>
+              <button className='try-btn' onClick={retryQuiz}>נסו שוב</button>
             </div>
           )}
         </div>

@@ -1,6 +1,6 @@
 
 
-  #page {
+.Home{
     position: absolute;
     top: 0%;
     right: 50%;
@@ -15,6 +15,7 @@
     overflow-x: hidden;
   }
   
+
   .button-container {
     display: flex;
     flex-direction: column;
@@ -24,7 +25,7 @@
     right: 50%;
     transform: translateX(50%);
     z-index: 10000;
-    font-family: "Heebo" ,Arial;
+    font-family: "Assistant" ,Arial;
     direction: rtl;
   }
   
@@ -36,20 +37,19 @@
     height: auto;
     text-align: center;
     padding: 3vh 0;
-    background-color: rgb(23, 90, 133); /* צבע הרקע המקורי */
+    background: linear-gradient(135deg, #175a85, #17799d); /* צבע הדרגתי */
     color: white; /* צבע הטקסט */
     border: none;
     cursor: pointer;
     border-radius: 50px;
     margin-bottom: 2vh;
-    font-family: "Heebo" ,Arial;
+    font-family: "Assistant" ,Arial;
     transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 /* סגנון הכפתור במצב "נלחץ" */
 .btn-class.active {
-    background-color: gray; /* צבע רקע אפור כשהכפתור נלחץ */
-    color: #fff;
+    background: linear-gradient(135deg, #888888, #aaaaaa);
     opacity: 0.7;
 }
 
@@ -78,7 +78,7 @@
     left: 50%;
     top: 30vh;
     transform: translateX(-50%);
-    font-family: "Heebo" ,Arial;
+    font-family: "Assistant" ,Arial;
     font-size: 1.2em;
     direction: rtl;
     font-weight: 700;
@@ -87,7 +87,7 @@
   }
   
   #intro {
-    font-family: "Heebo" ,Arial;
+    font-family: "Assistant" ,Arial;
     font-weight: 900;
 
     margin-top: 20%;
@@ -106,10 +106,10 @@
   .survey {
     width: 71vw;
     position: absolute;
-    margin-top: 94vmax;
+    margin-top: 94vh;
     right: 50%;
     transform: translateX(50%);
-    font-family: 'Heebo' ,Arial;
+    font-family: 'Assistant' ,Arial;
     font-size: 1.3em;
     color: rgb(23, 90, 133);
   }
@@ -128,4 +128,140 @@
 /* לא לאפשר לחיצה על כפתור "בוחן" */
 button:disabled {
   pointer-events: none; /* לא יאפשר אינטרקציה עם הכפתור */
+}
+
+
+@media screen and (min-width: 768px) {
+  
+.Home{
+    position: absolute;
+    top: 0%;
+    right: 50%;
+    transform: translateX(50%);
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  
+
+.button-container {
+  position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 עמודות שוות */
+    gap: 2vh; /* מרווח בין הכפתורים */
+    justify-items: center; /* מרכז כל כפתור בעמודה */
+    position: absolute;
+    top: 38vh;
+    z-index: 10000;
+    font-family: "Assistant", Arial;
+    direction: rtl;
+}
+
+.btn-class {
+    font-size: 3vmin; 
+    width: 25vw; 
+    height: 8vh; 
+    text-align: center;
+    padding: 0; 
+    background: linear-gradient(135deg, #175a85, #17799d); /* צבע הדרגתי */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px; 
+    font-family: "Assistant", Arial;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* סגנון הכפתור במצב "נלחץ" */
+.btn-class.active {
+    background: linear-gradient(135deg, #888888, #aaaaaa); /* גרדיאנט אפור */
+    color: #fff;
+    opacity: 0.8; /* קל שקוף יותר */
+    transform: scale(0.98); /* אפקט קטן של לחיצה */
+}
+
+/* סגנון הכפתור בריחוף */
+.btn-class:hover {
+    background: linear-gradient(135deg, #1ca3d8, #175a85); /* הפוך את הגוונים בהדרגה */
+    color: white;
+}
+  
+  #main-title {
+    position: absolute;
+    color: rgb(89, 89, 89);
+    font-size: 10Vmin;
+    top: 5vh;
+    transform: translateX(50%);
+    right: 50%;
+    width: 100%;
+    font-weight: 500;
+    text-align: center;
+    font-family: "Karantina", Arial;
+  }
+  
+  #intro, #intro1 {
+        position: absolute;
+        width: 70vw;
+        left: 50%;
+        top: 30vh;
+        transform: translateX(-50%);
+        font-family: "Assistant", Arial;
+        font-size: 3Vmin;
+        direction: rtl;
+        font-weight: 700;
+        color: rgb(89, 89, 89);
+        margin: 0;
+  }
+  
+  #intro {
+    font-family: "Assistant" ,Arial;
+    font-weight: 900;
+
+    margin-top: 20%;
+  }
+
+  .margin-class {
+    position: absolute;
+    color: transparent;
+    margin-top: 162vmax;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .survey {
+        width: 71vw;
+        position: absolute;
+        margin-top: 56vh;
+        right: 50%;
+        transform: translateX(50%);
+        font-family: 'Assistant', Arial;
+        font-size: 3Vmin;
+        color: rgb(23, 90, 133);
+  }
+  
+  #link {
+    color: rgb(23, 90, 133);
+    text-decoration: underline;
+  }
+
+.fade {
+  opacity: 0.5; /* שקיפות נמוכה */
+  cursor: not-allowed; 
+}
+
+/* לא לאפשר לחיצה על כפתור "בוחן" */
+button:disabled {
+  pointer-events: none; 
+}
+
+}
+@media screen and (min-width: 1200px) {
 }

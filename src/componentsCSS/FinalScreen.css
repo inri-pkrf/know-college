@@ -1,5 +1,5 @@
 
-#final-screen {
+.FinalScreen {
     position: absolute;
     top: 20%;
     right: 50%;
@@ -20,7 +20,7 @@
     margin-bottom: 2vh;
     direction: rtl;
     text-align: center;
-    font-family: "Heebo";
+    font-family: "Assistant";
     color:rgb(28, 180, 227);
     font-weight: 900;
     max-width: 100vw;
@@ -33,7 +33,7 @@
         margin-bottom: 2vh;
         direction: rtl;
         text-align: center;
-        font-family: "Heebo";
+        font-family: "Assistant";
         color: rgb(89,89,89);
         font-weight: 900;
         max-width: 90vw;
@@ -49,7 +49,7 @@
             height: 8vh;
             position: absolute;
             font-size: 1.3em;
-            font-family: "Heebo" ,Arial;
+            font-family: "Assistant" ,Arial;
             font-weight: bold;
             color: rgb(255, 255, 255);
             padding: 1.5vw;
@@ -79,7 +79,111 @@
             display: block; /* כדי שה-input יהיה בשורה חדשה תחת ה-label */
             padding: 0 10px; /* ריפוד פנימי */
             text-align: center;
-            font-family: "Heebo" ,Arial;
+            font-family: "Assistant" ,Arial;
             font-size: 1.2em;
           }
+          .button-final:disabled {
+            background: linear-gradient(135deg, #b5b5b5, #5c5c5c); /* צבעים "כבויים" */
+            cursor: not-allowed; /* סמן של איסור */
+            box-shadow: none; /* בלי הצללה */
+            opacity: 0.7; /* שקיפות קלה */
+            color: #f8f8f8; /* טקסט אפור בהיר */
+          }
+
+
+          @media screen and (min-width: 768px) {
+            .FinalScreen {
+    position: absolute;
+    top: 20%;
+    right: 50%;
+    transform: translateX(50%);
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    direction: rtl;
+  }
+
+  .blue-text-final {
+    font-size: 3vmin;
+    margin-bottom: 2vh;
+    direction: rtl;
+    text-align: center;
+    font-family: "Assistant";
+    color:rgb(28, 180, 227);
+    font-weight: 900;
+    width: 60vw;
+    right: 15vw;
+    position: relative;
+
+    }
+
+    .grey-big-final{
+        font-size:2.5vmin;
+        margin-bottom: 2vh;
+        direction: rtl;
+        text-align: center;
+        font-family: "Assistant";
+        color: rgb(89,89,89);
+        font-weight: 900;
+        max-width: 90vw;
+        padding-left: 5vw; 
+        padding-right: 5vw; 
+        }
+
+
+        .button-final{
+            border: none;
+            border-radius: 50px;
+            width: 30vw;
+            height: 6vh;
+            position: absolute;
+            font-size: 4Vmin;
+            font-family: "Assistant" ,Arial;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            right: 50%;
+            padding-bottom: 6vh;
+            transform: translateX(50%);
+           background: linear-gradient(135deg, #1ca3d8, #5dc1ff);
+           cursor: pointer;
+        
+        }
+        .button-final:hover{
+           background: linear-gradient(135deg, #1ca3d8, #03568a);
+        
+        }
+
+        .bottom{
+            position: absolute;
+            margin-top: 25vh;
+            right:50%;
+            transform: translateX(50%);
+
+        }
+        .input-label {
+            display: block;
+                font-family: "Assistant" ,Arial;
+            font-size: 2.5vmin;
+            margin-bottom: 10px; /* רווח בין ה-label ל-input */
+          }
           
+          .input-field {
+            border-radius: 50px;
+            height: 5vh;
+            width: 30%; /* ניתן לקבוע רוחב מותאם */
+            margin: 0 auto; /* ממורכז */
+            display: block; /* כדי שה-input יהיה בשורה חדשה תחת ה-label */
+            padding: 0 10px; /* ריפוד פנימי */
+            text-align: center;
+            font-family: "Assistant" ,Arial;
+            font-size: 2.5vmin;
+          }
+          }
+          
+          @media screen and (min-width: 1200px) {
+          }
