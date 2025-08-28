@@ -1,15 +1,15 @@
-#gif {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-    z-index: 2000; /* Ensure it appears above the header */
-    padding-top: 2vh;
-    overflow-y: scroll;
-    text-align: right; /* Aligns all text to the right */
-    direction: rtl;
+.Gif {
+   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 2000;
+  padding-top: 2vh;
+  overflow: hidden;
+  text-align: right;
+  direction: rtl;
 }
 
 .image-content-gif{
@@ -68,4 +68,149 @@
         margin-bottom: 22vh;
         width: 90vw;
         font-size: 1.1em;
+    }
+
+
+    @media screen and (min-width: 768px) {
+.Gif{
+   position: relative;
+    left: 13%;
+      height: 100VH;
+}
+
+.image-content-gif{
+    width: 100%;
+    height: auto;
+    margin-bottom: 5vh;
+    margin-top: 9vh;
+}
+
+.brands-gif {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    gap: 2vw;              
+    flex-wrap: wrap;         
+    width: 100%;            
+    margin-top: 2vh;       
+}
+
+.brand-gif {
+    height: auto;
+    width: 15vw;           
+}
+
+
+.grey-bold-gif{
+    font-size: 1.2em;
+    margin-bottom: 2vh;
+    direction: rtl;
+    text-align: center;
+    font-family: "Heebo" ,Arial;
+    color: rgb(89,89,89);
+    font-weight: 900;
+    max-width: 90vw;
+    padding-left: 5vw; 
+    padding-right: 5vw; 
+    }
+
+#next-btn-gif {
+        position: absolute;
+        z-index: 5;
+        MARGIN-TOP: 2VH;
+        left: 44%;
+        height: 11vh;
+        width: auto;
+        cursor: pointer;
+    }
+    #next-btn-gif:hover {
+       transform: scale(1.2);
+    }
+
+    .footer-gif {
+        position: absolute;
+        right: 50%;
+        height: 10vh;
+        transform: translateX(50%);
+        background-color: transparent;
+        font-weight: bold;
+        margin-top: 10vh;
+        margin-bottom: 22vh;
+        width: 90vw;
+        font-size: 1.1em;
+    }
+    }
+    @media screen and (min-width: 1200px) {
+.Gif {
+  position: relative;
+    left: 13%;
+    width: 70vw;
+    height: 100VH;
+}
+
+.image-content-gif{
+        position: relative;
+        width: 35%;
+        height: auto;
+        margin-bottom: 5vh;
+        margin-top: 9vh;
+        right: 50%;
+        transform: translateX(50%);
+}
+.brand-gif {
+    height: auto;
+    width: 8vw;           
+}
+
+   
+.brand-gif:hover {
+ transform: scale(1.2);
+}
+
+
+.brands-gif{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw;
+        flex-wrap: wrap;
+        width: 80%;
+        margin-top: 2vh;
+        right: 7vw;
+}
+
+
+
+
+.grey-bold-gif{
+    font-size: 3vmin;
+   
+    }
+
+#next-btn-gif {
+         position: absolute;
+        z-index: 5;
+        MARGIN-TOP: 2VH;
+        left: 44%;
+        height: 11vh;
+        width: auto;
+        cursor: pointer;
+    }
+#next-btn-gif:hover {
+       transform: scale(1.2);
+    }
+
+    .footer-gif {
+        position: absolute;
+        right: 50%;
+        height: 10vh;
+        transform: translateX(50%);
+        background-color: transparent;
+        font-weight: bold;
+        margin-top: 10vh;
+        margin-bottom: 22vh;
+        width: 90vw;
+        font-size: 1.1em;
+    }
     }

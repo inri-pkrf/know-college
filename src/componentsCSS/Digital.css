@@ -1,203 +1,368 @@
-#digital {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-    z-index: 2000; /* Ensure it appears above the header */
-    padding-top: 2vh;
-    overflow-y: scroll;
-    text-align: right; /* Aligns all text to the right */
-    direction: rtl;
+/* ====================== בסיסי (טלפון) ====================== */
+.Digital {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 2000;
+  padding-top: 2vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  text-align: right;
+  direction: rtl;
 }
-
-.image-content-digital{
-    width: 100%;
-    height: auto;
-    margin-bottom: 2vh;
-    }
-
 
 .titles-gray-digital {
-    font-size: 2.8em;
-    margin-top: 15vh;
-    direction: rtl;
-    text-align: center;
-    font-family: "karantina" ,Arial;
-    color: rgb(89, 89, 89);
-    }
-    
-   
-.simple-text-digital {
-    font-family: "Heebo" ,Arial;
-    text-align: right; /* Aligns these texts to the right */
-    max-width: 90vw; /* Prevents text from stretching across the full width */
-    padding-left: 5vw; /* Adds padding to the left */
-    padding-right: 5vw; /* Adds padding to the right */
+  font-size: 2em;
+  color: rgb(89, 89, 89);
+  font-family: "Karantina", Arial;
+  margin-top: 16vh;
+  text-align: right;
+  max-width: 90vw;
+  padding: 0 5vw;
+}
+
+.simple-text-digital,
+.blue-text-digital,
+.grey-bold-digital,
+.green-text-digital,
+.orange-text-digital {
+  font-family: "Assistant", Arial;
+  text-align: right;
+  max-width: 90vw;
+  padding: 0 5vw;
 }
 
 .simple-text-digital {
-    font-size: 1em;
-    color: rgb(89, 89, 89);
+  font-size: 1em;
+  color: rgb(89, 89, 89);
 }
-    
-    .blue-text-digital {
-    font-size: 1.4em;
-    margin-bottom: 2vh;
-    direction: rtl;
-    text-align: center;
-    font-family: "Heebo" ,Arial;
-    color:rgb(28, 180, 227);
-    font-weight: 900;
-    max-width: 90vw;
-    padding-left: 5vw; 
-    padding-right: 5vw; 
-    }
-    .green-text-digital {
-    font-size: 1.4em;
-    margin-bottom: 2vh;
-    direction: rtl;
-    text-align: center;
-    font-family: "Heebo" ,Arial;
-    color:rgb(59, 180, 140);
-    font-weight: 900;
-    max-width: 90vw;
-    padding-left: 5vw; 
-    padding-right: 5vw; 
-    margin-top: 20%;
-    }
-    .orange-text-digital {
-    font-size: 1.4em;
-    margin-bottom: 2vh;
-    direction: rtl;
-    text-align: center;
-    font-family: "Heebo" , Arial;
-    color:rgb(255,140,0);
-    font-weight: 900;
-    max-width: 90vw;
-    padding-left: 5vw; 
-    padding-right: 5vw; 
-    margin-top: 20%;
-    }
-    .white-text-digital{
-    font-size: 3em;
-    margin-bottom: 2vh;
-    direction: rtl;
-    text-align: right;
-    font-family: "Heebo" ,Arial;
-    color: transparent;
-    width: 95vw;
-    -webkit-user-select: none; /* Safari/Chrome */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Standard */
-    }
-    .grey-bold-digital{
-    font-size: 1.2em;
-    margin-bottom: 2vh;
-    direction: rtl;
-    text-align: center;
-    font-family: "Heebo" ,Arial;
-    color: rgb(89,89,89);
-    font-weight: 900;
-    max-width: 90vw;
-    padding-left: 5vw; 
-    padding-right: 5vw; 
-    }
-    .grey-big-digital{
-    font-size: 2em;
-    margin-bottom: 2vh;
-    direction: rtl;
-    text-align: right;
-    font-family: "Heebo" ,Arial;
-    color: rgb(89,89,89);
-    font-weight: 900;
-    max-width: 90vw;
-    padding-left: 5vw; 
-    padding-right: 5vw; 
-    }
-    .grey-big-center-digital{
-        font-size: 2em;
-        margin-bottom: 2vh;
-        direction: rtl;
-        text-align: center;
-        font-family: "Heebo",Arial;
-        color: rgb(89, 89, 89);
-        margin-top: 36%;
-        font-weight: 900;
-        max-width: 90vw;
-        padding-left: 5vw;
-        padding-right: 5vw;
-    }
 
-    
-.image-content-digital {
-    width: 100%;
-    height: auto;
-    margin-bottom: 2vh;
-    }
-    .image-content-neve {
-    width: 100%;
-    height: auto;
-    margin-bottom: 2vh;
-    margin-top: 20%;
-    }
-    .brand{
-      height:auto;
-      width:15vw
-    }
-    #site-link-digital{
-      font-size:1.3em; ;
-      font-family: "Heebo",Arial;
-      color:rgb(28, 180, 227);
-      text-decoration: underline; /* Add underline */
-    }
-    
-    #next-btn {
-      position: absolute;
-      z-index: 5;
-      left: 40%; 
-      height: 8vh;
-      width: auto;
-    }
+.blue-text-digital {
+  font-size: 1.2em;
+  font-weight: 900;
+  color: rgb(28, 180, 227);
+}
 
-    #link-digital{
-        background-color: rgb(28, 180, 227);
-        border-radius: 50px;
-        font-size: 1.5em;
-        font-family: "Heebo" ,Arial;
-        font-weight: 900;
-        text-align: center;
-        color: white;
-        padding-right: 20%;
-        margin-top: 8vh;
-        padding-left: 20%;
-        width: 35vw;
-        transform: translateX(50%);
-        position: absolute;
-        right: 50%;
-        padding-top: 5%;
-        padding-bottom: 5%;
-      }
-      .brands-digital {
-        display: flex;
-        justify-content: center; 
-        align-items: center;     
-        gap: 2vw;              
-        flex-wrap: wrap;         
-        width: 100%;            
-        margin-top: 2vh;       
-    }
-    
-    .brand-digital {
-        height: auto;
-        width: 15vw;           
-    }
-    
-    .image-content-neve-digital{
-        width: 100%;
-        height: auto;
-        margin-bottom: 2vh;
+.grey-bold-digital {
+  font-size: 1.3em;
+  color: rgb(89, 89, 89);
+  font-weight: 900;
+}
+
+.green-text-digital,
+.orange-text-digital {
+  font-size: 1.4em;
+  text-align: center;
+  font-weight: 900;
+  margin-top: 20%;
+  margin-bottom: 2vh;
+}
+
+.green-text-digital {
+  color: rgb(59, 180, 140);
+}
+
+.orange-text-digital {
+  color: rgb(255, 140, 0);
+}
+
+#next-btn-digital {
+  position: absolute;
+  z-index: 5;
+  left: 40%;
+  height: 8vh;
+}
+
+.image-content-digital,
+.gif-content-digital {
+  width: 100%;
+  height: auto;
+  margin: 2vh 0;
+}
+
+.image-content-neve,
+.image-content-neve-digital {
+  width: 100%;
+  height: auto;
+  margin: 20% 0 2vh 0;
+}
+
+
+#important-text-digital {
+  text-align: center;
+  font-size: 1em;
+  max-width: 90vw;
+  margin: 2vh auto;
+}
+
+.footer-digital {
+  position: relative;
+  text-align: center;
+  width: 90vw;
+  height: auto;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 17vh auto 5vh auto;
+}
+#link-digital {
+  background-color: rgb(28, 180, 227);
+  border-radius: 50px;
+  font-size: 1.5em;
+  font-family: "Assistant", Arial;
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  width: 35vw;
+  padding: 5% 20%;
+  transform: translateX(50%);
+  position: absolute;
+  right: 50%;
+  margin-top: 8vh;
+  transition: all 0.3s ease; /* מוסיף אנימציה ל-hover */
+}
+#link-digital:hover {
+  background-color: rgb(20, 150, 200); /* שינוי צבע בעת hover */
+  transform: translateX(50%) scale(1.05); /* מעט הגדלה */
+  cursor: pointer;
+}
+
+.brand,
+.brand-digital {
+  height: auto;
+  width: 15vw;
+}
+
+
+.brands-digital {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 2vh;
+}
+.grey-big-center-digital {
+  font-size: 2em;
+  margin-bottom: 2vh;
+  text-align: center;
+  font-family: "Assistant", Arial;
+  color: rgb(89, 89, 89);
+  margin-top: 36%;
+  font-weight: 900;
+  max-width: 90vw;
+  padding: 0 5vw;
+}
+
+/* ====================== טאבלט ====================== */
+@media screen and (min-width: 768px) {
+  .Digital {
+    position: relative;
+    left: 13%;
+    width: 70vw;
+  }
+
+  .titles-gray-digital {
+    font-size: 9vmin;
+    margin-top: 10vh;
+    text-align: center;
+  }
+
+  .simple-text-digital,
+  .blue-text-digital,
+  .grey-bold-digital,
+  .green-text-digital,
+  .orange-text-digital,
+  .grey-big-center-digital {
+    font-size: 3vmin;
+    line-height: 1.5;
+    width: 60vw;
+    padding: 0 5vw;
+    text-align: center;
+  }
+
+  #important-text-digital {
+    text-align: center;
+    font-size: 3vmin;
+    width: 60vw;
+    padding: 0 5vw;
+    margin: 2vh auto;
+  }
+
+  #video-digital,
+  .image-content-digital,
+  .gif-content-digital {
+    width: 40%;
+    height: auto;
+  }
+
+
+  .green-text-digital{
+    margin-top: 15%;
+  }
+
+  .orange-text-digital{
+    margin-top: 8%;
+  }
+    .grey-big-center-digital {
+        font-size: 7vmin;
+        font-family: "Karantina";
         margin-top: 20%;
-        }
+
+    }
+  .image-content-neve,
+.image-content-neve-digital {
+    width: 62%;
+        margin-top: 2%;
+        height: auto;
+        position: relative;
+        right: 13vw;
+}
+
+  #link-digital {
+    font-size: 3vmin;
+    width: 25vw;
+  }
+
+  .footer-digital {
+    font-size: 1.3em;
+    width: 100%;
+    margin-bottom: 10vh;
+  }
+    #link-digital {
+    width: 25vw;
+    font-size: 3vmin;
+    padding: 3% 15%;
+  }
+  .brand,
+.brand-digital {
+  height: auto;
+  width: 5vw;
+}
+
+
+.brands-digital {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  flex-wrap: wrap;
+  width:80%;
+  margin-top: 2vh;
+}
+}
+
+/* ====================== דסקטופ ====================== */
+@media screen and (min-width: 1200px) {
+  .Digital {
+    left: 13%;
+    width: 70vw;
+  }
+
+  .titles-gray-digital {
+    font-size: 9vmin;
+    margin-top: 10vh;
+    text-align: center;
+  }
+
+  .simple-text-digital,
+  .blue-text-digital,
+  .grey-bold-digital,
+  .green-text-digital,
+  .orange-text-digital{
+    font-size: 3vmin;
+    line-height: 1.5;
+    width: 60vw;
+    padding: 0 5vw;
+    text-align: center;
+  }
+  .green-text-digital{
+    margin-top: 15%;
+  }
+    .grey-big-center-digital {
+        font-size: 7vmin;
+        font-family: "Karantina";
+        margin-top: 20%;
+
+    }
+
+  #important-text-digital {
+    font-size: 3vmin;
+    width: 60vw;
+    padding: 0 5vw;
+    margin: 2vh auto;
+    text-align: center;
+  }
+
+  #video-digital,
+  .image-content-digital {
+    width: 33vw;
+    height: auto;
+    display: block;
+    margin: 3vh auto;
+  }
+
+  .footer-digital {
+    font-size: 1.3em;
+    width: 100%;
+    margin-bottom: 10vh;
+  }
+   #link-digital {
+    width: 20vw;
+    font-size: 3vmin;
+    padding: 2% 10%;
+  }
+    .brand,
+.brand-digital {
+  height: auto;
+  width: 9vw;
+}
+    .brand,
+.brand-digital:hover {
+ transform: scale(1.2);
+}
+
+
+.brands-digital {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw;
+        flex-wrap: wrap;
+        width: 80%;
+        margin-top: 2vh;
+        right: 7vw;
+}
+.Digital #next-btn {
+    position: absolute;
+    z-index: 5;
+    left: 46%;
+    height: 11vh;
+    width: auto;
+    cursor: pointer;
+}
+.Digital #next-btn:hover {
+    transform: scale(1.2);
+}
+}
+
+
+
+
+.fade-in-digital{
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-digital.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+

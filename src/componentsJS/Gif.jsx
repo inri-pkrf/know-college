@@ -10,7 +10,7 @@ const Gif = () => {
   };
 
   return (
-    <div id="gif">
+    <div className="Gif">
       <img className="image-content-gif" src={`${process.env.PUBLIC_URL}/assets/imgs/carry.gif`} alt="Carry GIF" />
       <p className="grey-bold-gif">אז לסיכום, לייק ועוברים הלאה :) קדימה, אנחנו מחכים..</p>
       <span className="brands-gif">
