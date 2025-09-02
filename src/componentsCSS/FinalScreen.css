@@ -1,18 +1,18 @@
 
 .FinalScreen {
-    position: absolute;
-    top: 20%;
-    right: 50%;
-    transform: translateX(50%);
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 0%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    direction: rtl;
+        position: absolute;
+        top: 0%;
+        right: 50%;
+        transform: translateX(50%);
+        height: 100vh;
+        width: 100vw;
+        background-color: aliceblue;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 0%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        direction: rtl;
   }
 
   .blue-text-final {
@@ -72,16 +72,29 @@
           }
           
           .input-field {
-            border-radius: 50px;
+            width: 60%;
             height: 5vh;
-            width: 60%; /* ניתן לקבוע רוחב מותאם */
-            margin: 0 auto; /* ממורכז */
-            display: block; /* כדי שה-input יהיה בשורה חדשה תחת ה-label */
-            padding: 0 10px; /* ריפוד פנימי */
-            text-align: center;
-            font-family: "Assistant" ,Arial;
+            margin: 1vh auto; /* מרכז ומוסיף מרווח בין שדות */
+            display: block;
+            padding: 0 1em;
             font-size: 1.2em;
+            font-family: "Assistant", Arial;
+            text-align: center;
+
+            border-radius: 25px; /* עיגול עדין */
+            border: 1px solid #ccc; /* גבול דק */
+            background-color: #f7f9fc; /* צבע רקע בהיר מודרני */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* צל קל */
+            transition: all 0.3s ease; /* אנימציה חלקה לפוקוס */
           }
+
+          .input-field:focus {
+            outline: none;
+            border: 2px solid #1ca3d8; /* צבע כחול מודגש */
+            box-shadow: 0 4px 10px rgba(28, 163, 216, 0.3); /* צל קל עם צבע הכחול */
+            background-color: #fff; /* רקע לבן נקי */
+          }
+
           .button-final:disabled {
             background: linear-gradient(135deg, #b5b5b5, #5c5c5c); /* צבעים "כבויים" */
             cursor: not-allowed; /* סמן של איסור */
@@ -94,22 +107,23 @@
           @media screen and (min-width: 768px) {
             .FinalScreen {
     position: absolute;
-    top: 20%;
-    right: 50%;
-    transform: translateX(50%);
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 0%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    direction: rtl;
+        top: 0%;
+        right: 50%;
+        transform: translateX(50%);
+        height: 100vh;
+        width: 100vw;
+        background-color: aliceblue;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 0%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        direction: rtl;
   }
 
   .blue-text-final {
-    font-size: 3vmin;
+    font-size: 4vmin;
+    margin-top: 15vh;
     margin-bottom: 2vh;
     direction: rtl;
     text-align: center;
@@ -123,16 +137,16 @@
     }
 
     .grey-big-final{
-        font-size:2.5vmin;
+        font-size: 3vmin;
         margin-bottom: 2vh;
         direction: rtl;
         text-align: center;
         font-family: "Assistant";
-        color: rgb(89,89,89);
+        color: rgb(89, 89, 89);
         font-weight: 900;
         max-width: 90vw;
-        padding-left: 5vw; 
-        padding-right: 5vw; 
+        padding-left: 5vw;
+        padding-right: 5vw;
         }
 
 
@@ -172,16 +186,28 @@
             margin-bottom: 10px; /* רווח בין ה-label ל-input */
           }
           
-          .input-field {
-            border-radius: 50px;
+            .input-field {
+            width: 30%;
             height: 5vh;
-            width: 30%; /* ניתן לקבוע רוחב מותאם */
-            margin: 0 auto; /* ממורכז */
-            display: block; /* כדי שה-input יהיה בשורה חדשה תחת ה-label */
-            padding: 0 10px; /* ריפוד פנימי */
+            margin: 1vh auto; /* מרכז ומוסיף מרווח בין שדות */
+            display: block;
+            padding: 0 1em;
+            font-size: 1.2em;
+            font-family: "Assistant", Arial;
             text-align: center;
-            font-family: "Assistant" ,Arial;
-            font-size: 2.5vmin;
+
+            border-radius: 25px; /* עיגול עדין */
+            border: 1px solid #ccc; /* גבול דק */
+            background-color: #f7f9fc; /* צבע רקע בהיר מודרני */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* צל קל */
+            transition: all 0.3s ease; /* אנימציה חלקה לפוקוס */
+          }
+
+          .input-field:focus {
+            outline: none;
+            border: 2px solid #1ca3d8; /* צבע כחול מודגש */
+            box-shadow: 0 4px 10px rgba(28, 163, 216, 0.3); /* צל קל עם צבע הכחול */
+            background-color: #fff; /* רקע לבן נקי */
           }
           }
           

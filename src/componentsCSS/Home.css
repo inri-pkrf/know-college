@@ -7,11 +7,11 @@
     transform: translateX(50%);
     height: 100vh;
     width: 100vw;
-    background-color: white;
+    background-color: aliceblue;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 0%;
-    overflow-y: scroll;
+       overflow-y: scroll;
     overflow-x: hidden;
   }
   
@@ -139,8 +139,8 @@ button:disabled {
     right: 50%;
     transform: translateX(50%);
     height: 100vh;
-    width: 100vw;
-    background-color: white;
+    width: 110vw;
+    background-color: aliceblue;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 0%;

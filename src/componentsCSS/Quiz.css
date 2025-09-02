@@ -1,17 +1,17 @@
 .Quiz {
-  position: absolute;
-  top: 15%;
-  right: 50%;
-  transform: translateX(50%);
-  height: 100vh;
-  width: 100vw;
-  background-color: white;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 0%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  direction: rtl;
+position: absolute;
+    top: 9%;
+    right: 50%;
+    transform: translateX(50%);
+    height: 100vh;
+    width: 100vw;
+    background-color: aliceblue;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    direction: rtl;
 }
 
 .question-number {
@@ -61,8 +61,9 @@
   font-size: 1.2em;
   text-align: center;
   font-family: "Assistant";
-  border: 1px solid #ddd;
+  border: 1px solid #5c5c5c;
   border-radius: 50px;
+  background-color: #d4d4d4;
   width: 80vw;
   margin: 10px auto; /* מרכז את הכפתור */
   cursor: pointer;
@@ -228,7 +229,7 @@
   transform: translateX(50%);
   height: 100vh;
   width: 100vw;
-  background-color: white;
+  background-color:  aliceblue;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0%;
@@ -256,7 +257,7 @@
 .progress-bar-container {
   width: 60%;
   height: 20px;
-  background-color: #e0e0e0;
+  background-color: #d4d4d4;
   border-radius: 10px;
   margin-top: 10px;
   position: fixed;
@@ -284,9 +285,10 @@
   font-size: 3vmin;
   text-align: center;
   font-family: "Assistant";
-  border: 1px solid #ddd;
+  border: 1px solid #b3b3b3;
   border-radius: 50px;
-  width: 50vw;
+  background-color: #d4d4d4;
+  width: 45vw;
   margin: 10px auto; /* מרכז את הכפתור */
   cursor: pointer;
   transition: background-color 0.3s;

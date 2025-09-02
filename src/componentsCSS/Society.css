@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
+    background-color:  aliceblue;
     z-index: 2000; /* Ensure it appears above the header */
     padding-top: 2vh;
     overflow-y: scroll;
@@ -16,9 +16,10 @@
 position: absolute;
 z-index: 5;
 margin-top: 3vh;
-left: 40%;
+right: 47%;
 height: 8vh;
 width: auto;
+cursor: pointer;
 }
 
 .blue-text-soc {
@@ -94,34 +95,18 @@ padding-right: 5vw;
 
 
 @media screen and (min-width: 768px) {
-    .Society {
-    position: relative;
-    top: 0;
-    left: 13%;
-    width: 70vw;
-    height: 100%;
-    background-color: #ffffff;
-    z-index: 2000; /* Ensure it appears above the header */
-    padding-top: 2vh;
-    overflow-y: scroll;
-    text-align: right;
+   .Society {
+        position: relative;
+        width: 100vw;
+          overflow-y: scroll; 
+  overflow-x: hidden;
      scrollbar-width: none;
     -ms-overflow-style: none; 
-    direction: rtl;
-}
-.Society::-webkit-scrollbar  {
-      display: none; 
-}
+  }
+ .Society::-webkit-scrollbar{
+     display: none; 
+ }
 
-#next-btn-soc {
-position: absolute;
-z-index: 5;
-margin-top: 3vh;
-left: 45%;
-height: 12vh;
-width: auto;
-cursor: pointer;
-}
 #next-btn-soc:hover {
 transform: scale(1.2);
 }
@@ -149,23 +134,34 @@ position: relative;
     text-align: center;
 }
 
-.simple-text-soc, .grey-bold-soc {
-width: 80%;
-height: auto;
-right:5%;
-margin-bottom: 2vh;
-font-size: 3vmin;
-text-align: center;
-max-width: 92vw;
-color: rgb(89,89,89);
+.simple-text-soc{
+      font-size: 3vmin;
+        position: relative;
+        line-height: 1.5;
+        width: 60vw;
+        right: 14vw;
+        padding-right: 5vw;
+        padding-left: 5vw;
+        text-align: right;
+}
+.grey-bold-soc {
+      font-size: 3vmin;
+        position: relative;
+        line-height: 1.5;
+        width: 60vw;
+        right: 14vw;
+        padding-right: 5vw;
+        padding-left: 5vw;
+        text-align: center;
 }
 
+
 .image-content-soc {
-position: relative;
-width: 60%;
-height: auto;
-right: 15vw;
-margin-bottom: 2vh;
+        position: relative;
+        width: 54%;
+        height: auto;
+        right: 22vw;
+        margin-bottom: 2vh;
 }
 
 .footer-soc {
@@ -181,94 +177,7 @@ margin-bottom: 2vh;
     font-size: 1.1em;
 }
 }
-@media screen and (min-width: 1200px) {
-        .Society {
-    position: relative;
-    top: 0;
-    left: 13%;
-    width: 70vw;
-    height: 100%;
-    background-color: #ffffff;
-    z-index: 2000; /* Ensure it appears above the header */
-    padding-top: 2vh;
-    overflow-y: scroll;
-    text-align: right;
-     scrollbar-width: none;
-    -ms-overflow-style: none; 
-    direction: rtl;
-}
-.Society::-webkit-scrollbar  {
-      display: none; 
-}
 
-#next-btn-soc {
-position: absolute;
-z-index: 5;
-margin-top: 3vh;
-left: 45%;
-height: 12vh;
-width: auto;
-cursor: pointer;
-}
-#next-btn-soc:hover {
-transform: scale(1.2);
-}
-
-.blue-text-soc {
-font-size: 3vmin;
-margin-bottom: 2vh;
-direction: rtl;
-text-align: center;
-left:25%;
-position: relative;
-
-
-
-}
-
-.titles-gray-soc {
-    font-size:9vmin;
-    margin-top: 14vh;
-    margin-bottom: 2vh;
-    direction: rtl;
-    text-align: right;
-    font-family: "karantina";
-    color: rgb(89, 89, 89);
-    text-align: center;
-}
-
-.simple-text-soc, .grey-bold-soc {
-width: 80%;
-height: auto;
-right:5%;
-margin-bottom: 2vh;
-font-size: 3vmin;
-text-align: center;
-max-width: 92vw;
-color: rgb(89,89,89);
-}
-
-.image-content-soc {
-position: relative;
-width: 60%;
-height: auto;
-right: 15vw;
-margin-bottom: 2vh;
-}
-
-.footer-soc {
-    position: absolute;
-    right: 50%;
-    height: 10vh;
-    transform: translateX(50%);
-    background-color: transparent;
-    font-weight: bold;
-    margin-top: 13vh;
-    margin-bottom: 22vh;
-    width: 90vw;
-    font-size: 1.1em;
-}
-}
 
 
 

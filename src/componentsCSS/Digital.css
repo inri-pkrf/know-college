@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color:  aliceblue;
   z-index: 2000;
   padding-top: 2vh;
   overflow-y: scroll;
@@ -15,7 +15,7 @@
 }
 
 .titles-gray-digital {
-  font-size: 2em;
+  font-size: 3em;
   color: rgb(89, 89, 89);
   font-family: "Karantina", Arial;
   margin-top: 16vh;
@@ -160,16 +160,19 @@
 
 /* ====================== טאבלט ====================== */
 @media screen and (min-width: 768px) {
-  .Digital {
-    position: relative;
-    left: 13%;
-    width: 70vw;
-     scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
+   .Digital {
+        position: relative;
+        width: 100vw;
+          overflow-y: scroll; 
+  overflow-x: hidden;
+     scrollbar-width: none;
+    -ms-overflow-style: none; 
   }
-  .Digital::-webkit-scrollbar {
-    display: none;
-  }
+ .Digital ::-webkit-scrollbar{
+     display: none; 
+ }
+
+
 
   .titles-gray-digital {
     font-size: 9vmin;
@@ -183,184 +186,109 @@
   .green-text-digital,
   .orange-text-digital,
   .grey-big-center-digital {
-    font-size: 3vmin;
-    line-height: 1.5;
-    width: 60vw;
-    padding: 0 5vw;
-    text-align: center;
+  font-size: 3vmin;
+        position: relative;
+        line-height: 1.5;
+        width: 60vw;
+        right: 14vw;
+        padding-right: 5vw;
+        padding-left: 5vw;
+        text-align: right;
   }
 
   #important-text-digital {
-    text-align: center;
-    font-size: 3vmin;
-    width: 60vw;
-    padding: 0 5vw;
-    margin: 2vh auto;
+     font-size: 3vmin;
+        line-height: 1.5;
+        width: 60vw;
+        /* padding-right: 5vw; */
+        /* padding-left: 5vw; */
+        text-align: center;
+       right: 0vw;
   }
 
   #video-digital,
   .image-content-digital,
   .gif-content-digital {
-    width: 40%;
-    height: auto;
+         width: 27vw;
+        POSITION: relative;
+        height: auto;
+        right: 37VW;
+  
   }
 
 
   .green-text-digital{
-    margin-top: 15%;
+    margin-top: 8%; 
   }
 
   .orange-text-digital{
     margin-top: 8%;
   }
     .grey-big-center-digital {
-        font-size: 7vmin;
+             font-size: 7vmin;
         font-family: "Karantina";
-        margin-top: 20%;
+        margin-top: 13%;
+        text-align: center;
 
     }
   .image-content-neve,
 .image-content-neve-digital {
-    width: 62%;
+ width: 43%;
         margin-top: 2%;
         height: auto;
         position: relative;
-        right: 13vw;
+        right: 27vw;
 }
 
-  #link-digital {
-    font-size: 3vmin;
-    width: 25vw;
-  }
 
   .footer-digital {
     font-size: 1.3em;
     width: 100%;
     margin-bottom: 10vh;
   }
-    #link-digital {
-    width: 25vw;
+#link-digital{
+  width: 8vw; /* הצרת הכפתור */
     font-size: 3vmin;
-    padding: 3% 15%;
-  }
+    font-family: "Assistant", Arial;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    right: 50%;
+    transform: translateX(50%);
+    position: absolute;
+    margin-top: 7vh;
+    padding: 2vh 8vw;
+    border-radius: 30px; 
+    white-space: nowrap; 
+    background: linear-gradient(135deg, #1ca3d8, #5dc1ff);
+    transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+#link-digital:hover{
+    background: linear-gradient(105deg, #1ca3d8, #004977);
+}
+
   .brand,
 .brand-digital {
   height: auto;
-  width: 5vw;
+  width:9vw;
 }
-
+.brand-digital:hover{
+  transform:scale(1.2);
+}
 
 .brands-digital {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2vw;
-  flex-wrap: wrap;
-  width:80%;
-  margin-top: 2vh;
-}
-}
-
-/* ====================== דסקטופ ====================== */
-@media screen and (min-width: 1200px) {
-  .Digital {
-    position: relative;
-    left: 13%;
-    width: 70vw;
-     scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-  }
-  .Digital::-webkit-scrollbar {
-    display: none;
-  }
-
-  .titles-gray-digital {
-    font-size: 9vmin;
-    margin-top: 10vh;
-    text-align: center;
-  }
-
-  .simple-text-digital,
-  .blue-text-digital,
-  .grey-bold-digital,
-  .green-text-digital,
-  .orange-text-digital{
-    font-size: 3vmin;
-    line-height: 1.5;
-    width: 60vw;
-    padding: 0 5vw;
-    text-align: center;
-  }
-  .green-text-digital{
-    margin-top: 15%;
-  }
-    .grey-big-center-digital {
-        font-size: 7vmin;
-        font-family: "Karantina";
-        margin-top: 20%;
-
-    }
-
-  #important-text-digital {
-    font-size: 3vmin;
-    width: 60vw;
-    padding: 0 5vw;
-    margin: 2vh auto;
-    text-align: center;
-  }
-
-  #video-digital,
-  .image-content-digital {
-    width: 33vw;
-    height: auto;
-    display: block;
-    margin: 3vh auto;
-  }
-
-  .footer-digital {
-    font-size: 1.3em;
-    width: 100%;
-    margin-bottom: 10vh;
-  }
-   #link-digital {
-    width: 20vw;
-    font-size: 3vmin;
-    padding: 2% 10%;
-  }
-    .brand,
-.brand-digital {
-  height: auto;
-  width: 9vw;
-}
-    .brand,
-.brand-digital:hover {
- transform: scale(1.2);
-}
-
-
-.brands-digital {
-        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 2vw;
         flex-wrap: wrap;
-        width: 80%;
+        width: 98%;
         margin-top: 2vh;
-        right: 7vw;
-}
-.Digital #next-btn {
-    position: absolute;
-    z-index: 5;
-    left: 46%;
-    height: 11vh;
-    width: auto;
-    cursor: pointer;
-}
-.Digital #next-btn:hover {
-    transform: scale(1.2);
 }
 }
+
+
+
 
 
 
