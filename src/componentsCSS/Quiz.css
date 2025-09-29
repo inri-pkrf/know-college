@@ -101,13 +101,16 @@ position: absolute;
 }
 
 .results {
-    text-align: center;
+text-align: center;
     font-size: 1.2em;
     position: absolute;
-    top: 11vh;
+    top: 9vh;
     right: 50%;
     transform: translateX(50%);
     direction: rtl;
+    background-color: aliceblue;
+    width: 100vw;
+    height: 100vh;
 }
 
 .prev-button{
@@ -179,7 +182,6 @@ position: absolute;
     margin-bottom: auto;
 
 }
-
 
 .try-button{
     background-color: rgb(255, 140, 0);
@@ -406,6 +408,11 @@ position: absolute;
 }
 .end-btn:hover{
   background-color: rgb(27, 109, 134);
+
+}
+.share-btn:hover{
+  background-color: rgb(27, 109, 134);
+  cursor: pointer;
 
 }
 

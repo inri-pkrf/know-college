@@ -34,7 +34,7 @@ const Hamburger = () => {
   };
 
   const handleMenuClick = (path) => {
-    setIsOpen(false); // Close the menu after selection
+    setIsOpen(false); 
     navigate(path);
   };
 

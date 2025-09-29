@@ -8,7 +8,7 @@ const Library = ({ onVisit }) => {
 
   useEffect(() => {
     if (onVisit) {
-      onVisit(); // קריאה לפונקציה חיצונית
+      onVisit();
     }
 
     const observer = new IntersectionObserver(
@@ -16,11 +16,11 @@ const Library = ({ onVisit }) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // לא לבדוק שוב
+            observer.unobserve(entry.target); 
           }
         });
       },
-      { threshold: 0.1 } // מופעל כשהאלמנט 10% בתוך המסך
+      { threshold: 0.1 } 
     );
 
     elementsRef.current.forEach((el) => {

@@ -29,7 +29,7 @@
     direction: rtl;
   }
   
-/* סגנון ברירת המחדל של הכפתור */
+
 .btn-class {
     font-size: 1.5em;
     margin-top: 2vh;
@@ -37,8 +37,8 @@
     height: auto;
     text-align: center;
     padding: 3vh 0;
-    background: linear-gradient(135deg, #175a85, #17799d); /* צבע הדרגתי */
-    color: white; /* צבע הטקסט */
+    background: linear-gradient(135deg, #175a85, #17799d); 
+    color: white; 
     border: none;
     cursor: pointer;
     border-radius: 50px;
@@ -47,13 +47,13 @@
     transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
-/* סגנון הכפתור במצב "נלחץ" */
+
 .btn-class.active {
     background: linear-gradient(135deg, #888888, #aaaaaa);
     opacity: 0.7;
 }
 
-/* סגנון הכפתור בריחוף */
+
 .btn-class:hover {
     background-color: rgb(33, 173, 216);
     color: white;
@@ -118,16 +118,15 @@
     color: rgb(23, 90, 133);
     text-decoration: underline;
   }
-/* צבע אפור לכפתורים שנלחצו */
-/* כפתור "בוחן" שלא מאופשר */
+
 .fade {
-  opacity: 0.5; /* שקיפות נמוכה */
-  cursor: not-allowed; /* משנה את המצב של הסמן כשלא ניתן ללחוץ */
+  opacity: 0.5; 
+  cursor: not-allowed;
 }
 
-/* לא לאפשר לחיצה על כפתור "בוחן" */
+
 button:disabled {
-  pointer-events: none; /* לא יאפשר אינטרקציה עם הכפתור */
+  pointer-events: none; 
 }
 
 
@@ -152,9 +151,9 @@ button:disabled {
 .button-container {
   position: absolute;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 עמודות שוות */
-    gap: 2vh; /* מרווח בין הכפתורים */
-    justify-items: center; /* מרכז כל כפתור בעמודה */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2vh;
+    justify-items: center; 
     position: absolute;
     top: 38vh;
     z-index: 10000;
@@ -168,7 +167,7 @@ button:disabled {
     height: 8vh; 
     text-align: center;
     padding: 0; 
-    background: linear-gradient(135deg, #175a85, #17799d); /* צבע הדרגתי */
+    background: linear-gradient(135deg, #175a85, #17799d); 
     color: white;
     border: none;
     cursor: pointer;
@@ -178,17 +177,16 @@ button:disabled {
     transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* סגנון הכפתור במצב "נלחץ" */
 .btn-class.active {
-    background: linear-gradient(135deg, #888888, #aaaaaa); /* גרדיאנט אפור */
+    background: linear-gradient(135deg, #888888, #aaaaaa);
     color: #fff;
-    opacity: 0.8; /* קל שקוף יותר */
-    transform: scale(0.98); /* אפקט קטן של לחיצה */
+    opacity: 0.8; 
+    transform: scale(0.98); 
 }
 
-/* סגנון הכפתור בריחוף */
+
 .btn-class:hover {
-    background: linear-gradient(135deg, #1ca3d8, #175a85); /* הפוך את הגוונים בהדרגה */
+    background: linear-gradient(135deg, #1ca3d8, #175a85); 
     color: white;
 }
   
@@ -253,11 +251,10 @@ button:disabled {
   }
 
 .fade {
-  opacity: 0.5; /* שקיפות נמוכה */
+  opacity: 0.5;
   cursor: not-allowed; 
 }
 
-/* לא לאפשר לחיצה על כפתור "בוחן" */
 button:disabled {
   pointer-events: none; 
 }

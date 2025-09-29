@@ -137,8 +137,6 @@
   font-size: 3vmin;
         line-height: 1.5;
         width: 60vw;
-        /* padding-right: 5vw; */
-        /* padding-left: 5vw; */
         text-align: center;
        right: 0vw;
 }
@@ -154,7 +152,7 @@
 
 
   #video, .image-content, .gif-content {
-    width: 40vw;   /* לא מתוחים על כל המסך אלא לפי הקונטיינר */
+    width: 40vw;  
     height: auto;
     display: block;
     margin: 3vh auto;

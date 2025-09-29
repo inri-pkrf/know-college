@@ -24,9 +24,9 @@ const Home = ({ onVisit }) => {
       const updatedVisitedPages = [...visitedPages, location.pathname];
       setVisitedPages(updatedVisitedPages);
       sessionStorage.setItem('visitedPages', JSON.stringify(updatedVisitedPages));
-      onVisit(location.pathname); // נרשם רק אם הדף לא נבקר קודם
+      onVisit(location.pathname);
     }
-  }, [location.pathname, visitedPages, onVisit]); // השגחה על כל ערך רלוונטי
+  }, [location.pathname, visitedPages, onVisit]);
 
   const moveToPage = (index) => {
     navigate(subjects[index].path);

@@ -251,7 +251,7 @@ font-family: 'Karantina', Arial;
   left: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: contain; /* מתאים את הוידיאו למסך מבלי לחתוך אותו */
+  object-fit: contain; 
 }
 
 .skip {

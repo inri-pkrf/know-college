@@ -1,4 +1,3 @@
-// src/components/Header.jsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../componentsCSS/Header.css';
@@ -10,18 +9,17 @@ function Header() {
   const location = useLocation();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  // מעדכן לפי גודל המסך
+
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // קובע איזה תמונה להציג
-  const imageSrc = location.pathname === '/iron-swords-college'
-    ? `${process.env.PUBLIC_URL}/assets/imgs/red.png`   // אדום
-    : `${process.env.PUBLIC_URL}/assets/imgs/orange.png`; // כתום
 
+  const imageSrc = location.pathname === '/iron-swords-college'
+    ? `${process.env.PUBLIC_URL}/assets/imgs/red.png` 
+    : `${process.env.PUBLIC_URL}/assets/imgs/orange.png`;
   return (
     <header className="header">
       {/* בטלפון → המבורגר, בדסקטופ → נאבר */}
@@ -40,7 +38,7 @@ function Header() {
 
       <button
         className="back-homeNav"
-        onClick={() => navigate('/home')} // ניווט לעמוד הבית
+        onClick={() => navigate('/home')} 
       >
       </button>
 
