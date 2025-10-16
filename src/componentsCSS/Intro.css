@@ -26,14 +26,14 @@
 }
 
 #welcome-text-intro{
-  color: white;
-  font-family: "karantina", Arial;
+  font-family: 'Karantina', Arial;
   font-size: 3em;
+  color: white;
+  margin-bottom: -5vw;
+  position: absolute;
   transform: translateX(50%);
   right: 50%;
-  direction: rtl;
-  POSITION: absolute;
-  margin-top: -8vh;
+  margin-top: -19vh;
   width: 90vw;
 }
 
@@ -43,7 +43,7 @@
   color: white;
   position: absolute;
   direction: rtl;
-  margin-top: 3vh;
+  margin-top: -2vh;
   width: 70vw;
   right: 50%;
   transform: translateX(50%);
@@ -57,7 +57,7 @@
   position: absolute;
   transform: translateX(50%);
   right: 50%;
-  margin-top: -19vh;
+  margin-top: -29vh;
   width: 90vw;
 }
 
